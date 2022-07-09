@@ -1,0 +1,145 @@
+/* .photosCards {
+  display: grid;
+  grid-template-columns: 250px 300px 80px;
+  grid-row-gap: 5px;
+  grid-column-gap: 10px;
+  justify-content: center;
+} */
+
+
+
+.photosCards {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-width: 33%;
+    -moz-column-width: 33%;
+    column-width: 33%;
+    padding: 0 12px;
+   
+   }
+   
+   .photosCards .photoCard{
+     -webkit-transition:all 350ms ease;
+     transition: all 350ms ease;
+     cursor: pointer;
+     margin-bottom: 12px;
+   
+   }
+   .photosCards .photoCard:hover{
+     filter: opacity(.8);
+   }
+   @media (max-width: 991px){
+     .photosCards{
+       -webkit-column-count: 2;
+       -moz-column-count: 2;
+       column-count: 2;
+     }
+   }
+   @media (max-width: 480px){
+     .photosCards{
+       -webkit-column-count: 1;
+       -moz-column-count: 1;
+       column-count: 1;
+       -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+     }
+   }
+   
+   .model{
+     width: 100%;
+     height: 100vh;
+     position: fixed;
+     top: 0;
+     left: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: #000000;
+     transition: opacity .4s, visibility .4s ease, transform .5s ease-in-out;
+     visibility: hidden;
+     opacity: 0;
+     transform: scale(0);
+     overflow: hidden;
+     z-index: 900;
+   }
+   .model.open{
+     visibility: visible;
+     opacity: 1;
+     transform: scale(1);
+   }
+   .model img{
+     width: auto;
+     max-width: 100%;
+     height: auto;
+     max-height: 100%;
+     display: block;
+     line-height: 0;
+     box-sizing: border-box;
+     padding: 20px 0 20px;
+     margin: 0 auto;
+   }
+   
+   
+   
+   
+   .btn-download {
+       background-color: black;
+       color: red;
+   }
+   
+   .div-btn{
+     display: flex;
+     justify-content: center;
+   }
+   .iconSearch{
+     width: 25px;
+     height: 25px;
+     margin-left: -7px;
+     margin-bottom: 5px;
+     
+   }
+   
+   .buttonSearch{
+     background: transparent;
+     width: 25px;
+     height: 25px;
+     margin-left: -35px;
+     margin-top: 170px;
+     border: 5px;
+   }
+   
+   .iconDetail{
+    width: 25px;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 5px;
+   }
+   .imgPhotosPerPage{
+    border-radius: 10px;
+    width: 300px;
+    height: auto;
+   }
+   .verticalImg{
+     border-radius: 10px;
+     width: 300px;
+     height: auto;
+   }
+   .horizontalImg{
+     border-radius: 10px;
+     width: auto;
+     height: 200px;
+   }
+   .imgCardSpinner{
+     display: flex;
+   }
+   .spinnerPhotos{
+     position:relative;
+     right: 50%;
+     top:50%
+   }
+   .userPhotoDetail{
+   width: 100%;
+   height: auto;
+   }

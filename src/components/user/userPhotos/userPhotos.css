@@ -1,0 +1,204 @@
+.userPhotosTitle{
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 170%;
+}
+.btn-excursion{
+    background-color:#5939fa;
+    border-color: #5939fa;
+    color: #fffef4;
+    border-radius: 30px;
+    width: 170px; 
+    margin: 6px;
+    font-family: 'Fredoka';
+    white-space: nowrap;
+    width: fit-content;
+    
+}
+.btn-excursion:hover{
+    background-color:#3e27af;
+    border-color: #3e27af;
+    color: #fffef4;
+    border-radius: 30px;
+    width: 170px; 
+    margin: 6px;
+    
+    white-space: nowrap;
+    width: fit-content;
+}
+.btn-excursion:active{
+    background-color:#3e27af !important;
+    border-color: #3e27af !important;
+    box-shadow: none !important;
+}
+.btn-excursion:focus{
+    background-color:#3e27af !important;
+    border-color: #3e27af !important;
+    box-shadow: none !important;
+}
+.userPhotosPie{
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    margin: -3px;
+}
+.excursionButtons{
+    display: flex;
+    justify-content: center;
+}
+.downloadAllButton{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.signOutUserPhotos{
+    position:absolute;
+    margin-left: 80%;
+    margin-top: 2%;
+    background-color:#7c7c7c;
+    border-color: #7c7c7c;
+    color: #fffef4;
+    border-radius: 30px;
+    width: 170px; 
+    font-family: 'Carrois Gothic SC', sans-serif;
+}
+
+.buttonUserExit{
+    align-self: flex-end;
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight:1200;
+    font-family: 'Fredoka';
+    border: 1px solid  #777878  !important;
+    background-color:  #777878  !important;
+    color: rgb(252, 245, 245) !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px !important;
+    
+    height: 30px;
+    margin: 10px !important;
+    transition: none !important;
+    width: 150px;
+    box-shadow: 0px 3px 5px 0px #989898b2 !important;
+}
+.buttonUserExit:focus{
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight:1200;
+    font-family: 'Fredoka';
+    border: 1px solid #5939fa !important;
+    background-color: #5939fa !important;
+    color: rgb(252, 245, 245) !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px !important;
+    box-shadow: 0px 3px 5px 0px #989898b2 ;
+    height: 30px;
+    margin: 10px !important;
+    
+}
+.buttonUserExit:hover{
+    border-color: transparent;
+    margin: 10px !important;
+    border: 1px solid #5939fa !important;
+    background-color: #5939fa  !important;
+   
+}
+.buttonUserExit:active{
+    border-color: transparent;
+    margin: 10px !important;
+    box-shadow: 0px 3px 5px 0px #989898b2 !important;
+}
+.userPhotos{
+    display: flex;
+    flex-direction: column;
+}
+.photosLogo{
+    max-width: 150px;
+    margin-left: 100px;
+    margin-top: 50px;
+    position: absolute;
+}
+.descargarTodo{
+    background-color:#5939fa;
+    border-color: #5939fa;
+    color: #fffef4;
+    border-radius: 30px;
+    width: 170px; 
+    margin: 6px;
+    font-family: 'Fredoka';
+    white-space: nowrap;
+    width: fit-content;
+   
+}
+.descargarTodo:hover{
+    background-color:#3e27af !important;
+    border-color: #3e27af !important;
+    color: #fffef4;
+    box-shadow: none !important;
+   
+}
+.descargarTodo:focus{
+    background-color:#3e27af !important;
+    border-color: #3e27af !important;
+    color: #fffef4;
+    box-shadow: none !important;
+   
+}
+.descargarTodo:active{
+    background-color:#3e27af !important;
+    border-color: #3e27af !important;
+    color: #fffef4;
+    box-shadow: none !important;
+   
+}
+@media(max-width: 1150px) {
+    .photosLogo{
+        display: none;
+    }
+}
+@media(max-width: 750px) {
+    .userPhotosTitle{
+        display: flex;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        font-size: 100%;
+    }
+    .excursionButtons{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-excursion{
+        min-width: 300px;
+    }
+    .userPhotosPie{
+        font-size: 70%;
+    }
+}
+@media(max-width: 420px) {
+    .userPhotosTitle{
+        display: flex;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        font-size: 75%;
+    }
+    .excursionButtons{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-excursion{
+        min-width: 300px;
+    }
+    .userPhotosPie{
+        font-size: 55%;
+    }
+}

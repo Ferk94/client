@@ -1,0 +1,9 @@
+.redCrossPhoto{
+    margin-top: -65px;
+    margin-left: 10px;
+    width: 40px;
+    height: auto; 
+    z-index: 899;
+    position: absolute;
+    cursor: pointer;
+}

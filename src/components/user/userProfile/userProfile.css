@@ -1,0 +1,31 @@
+.userProfileComponent{
+    background: linear-gradient(#fc1515, black);
+    padding-bottom:  485px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.userProfileComponentRegister{
+    display: flex;
+    flex-direction: column;
+    background-color:black;
+    justify-self: center;
+    border-radius: 30px;
+    align-self: center;
+    min-width: 60%;
+    color: white;
+    font-style: oblique;
+    margin: 20px;
+    padding: 50px;
+}
+
+.userProfileComponentRegisterContainer {
+    padding: 15px;
+    display: flex;
+    width: 70%;
+    align-content: center;
+    align-self: center;
+    background: linear-gradient(#fc1515, black);
+    border-radius: 152px;
+}

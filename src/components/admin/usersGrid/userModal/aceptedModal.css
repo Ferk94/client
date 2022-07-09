@@ -1,0 +1,11 @@
+.greenTick{
+    width: 22px;
+    cursor: pointer;
+}
+
+.greenTick-acepted{
+    width: 22px;
+    cursor: disabled;
+    pointer-events: none;
+    opacity: 10%
+}

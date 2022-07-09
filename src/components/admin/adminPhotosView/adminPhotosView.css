@@ -1,0 +1,108 @@
+.componentAdminPhotos{
+    background:rgb(252, 245, 245);
+    padding-top: 10px;
+    padding-bottom: 154px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.adminPhotosForm {
+    display: flex;
+    flex-direction: column;
+    background-color: #d7d8d9 ;
+    border-radius: 30px;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    color: white;
+    padding-bottom: 50px;
+    padding-top:50px;
+}
+
+.filterButton {
+    width: 40%;
+    margin-left: 230px;
+}
+
+.adminPhotosButton{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-style:oblique;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 20px;
+    max-width: 70%;
+   
+
+}
+
+.adminPhotosTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.register1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    justify-self: center;
+    border-radius: 30px;
+    align-self: center;
+    width: 50%;
+    height: 50%;
+    color: white;
+    font-style: oblique;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+.AdminPhotosCoordinatorsSelect{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-radius: 25px;
+    background-color:  #797b78  !important;
+    height: 45px;
+    font-family: 'Fredoka';
+    font-weight: bolder;
+    padding-left: 20px;
+}
+.AdminPhotosFileInput{
+    display: none;
+}
+.AdminPhotosCoordinatorsSelectFile{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    border-radius: 25px;
+    background-color:  #797b78  !important;
+    height: 45px;
+    font-family: 'Fredoka' !important;
+    font-weight: bolder;
+    padding-left: 20px;
+    cursor: pointer;
+    color: #212529;
+    font-size: 16px;
+}
+.adminPhotosCheck{
+width: 70px;
+background-color: #69ff55;
+border-radius: 60px;
+cursor: pointer;
+}
+.form-select:focus{
+    border-color: rgb(239, 11, 81);
+    outline: 0;
+    box-shadow: none !important;}

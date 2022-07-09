@@ -1,0 +1,295 @@
+.landing1 {
+    /* background-image: url('/images/p1.png'); */
+    /* background-image: url("/client/src/assets/images/p1.png"); */
+    /* background-image: url('./assets/images/p1.png'); */
+    background-image: url('../../assets/images/p1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    
+}
+.landing2 {
+    /* background-image: url('/images/p1.jpg'); */
+    background-image: url("../../assets/images/p2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.landing3 {
+    /* background-image: url('/images/p1.jpg'); */
+    height: 100vh;
+}
+.landing4 {
+    /* background-image: url('/images/p1.jpg'); */
+    background-image: url("../../assets/images/p4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.landing5 {
+    /* background-image: url('/images/p1.jpg'); */
+    background-image: url("../../assets/images/p5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.landing6 {
+    /* background-image: url('/images/p1.jpg'); */
+    background-image: url("../../assets/images/p6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.landing7 {
+    /* background-image: url('/images/p1.jpg'); */
+    height: 100vh;
+}
+
+
+.l-button {
+    height: 60px;
+    width: 190px;
+    background-color: transparent;
+    font-size: 30px;
+    color: white;
+    
+}
+
+.l-button:hover {
+    background-color: white;
+    color: black
+}
+
+/* .buttonsLanding button{
+    margin: 50px;
+    background: black;
+
+} */
+.buttonsLanding{
+    margin-left: 110px;
+    margin-top: 100px;
+}
+.buttonLoginLanding {
+    background-color:transparent;
+    border-color: #fffef4;
+    color: #fffef4;
+    border-radius: 30px;
+    width: 170px;
+    margin-right: 10px;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font: bold;
+  
+   
+}
+.buttonLoginLanding:hover{
+   background-color:#dfff68;
+    border-color: #dfff68;
+    color: #5939fa;
+    border-radius: 30px;
+    width: 170px; 
+    margin-right: 10px;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font: bold;
+}
+.buttonLoginLanding:active{
+    box-shadow: none !important;
+    background-color:#dfff68 !important;
+    border-color: #dfff68 !important;
+    color: #5939fa !important;
+}
+.buttonLoginLanding:focus{
+    box-shadow: none !important;
+    background-color:#dfff68 !important;
+    border-color: #dfff68 !important;
+    color: #5939fa !important;
+}
+.welcome{
+    margin-left: 40px;
+    /* margin-top: 100px; */
+    color:white;
+    font: bold;
+    font-size: 500%;
+}
+.landingLogo{
+    max-width: 150px;
+    margin-left: 100px;
+    margin-top: 50px;
+    position: absolute;
+}
+.dot{
+    max-width: 9px;
+    margin: 5px; 
+}
+.openDot{
+    max-width: 14px;
+    margin: 5px;
+}
+.dots{
+    position:fixed;
+    margin-left: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.bienvenidos{
+    margin-left: 100px;
+    margin-top: 100px;
+    z-index: 10;
+}
+.subtitulo{
+    margin-top: 7px;
+    margin-left: 100px;
+    max-width: 50%;
+}
+
+.whatsappContainerLanding{
+display: flex;
+justify-content: flex-end;
+margin-right: 50px;
+margin-top: 50px;
+}
+.whatsappLanding{
+width: 45px;
+}
+
+@media (max-width: 600px) {
+   .landing1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+   }
+   .landing2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   }
+   .landing3{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   }
+   .landing4{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   }
+   .landing5{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   }
+   .landing6{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   }
+   .landing7{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   }
+   .landingLogo{
+       margin-top: -500px;
+       margin-left: 10%;
+   }
+   .bienvenidos{
+    display: flex;
+    margin-left: 0px;
+    margin-top: 0px;
+    max-width: 80%;
+    
+   }
+   .bienvenidosContainer{
+       display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   }
+   .subtitulo{
+    margin-left: 10%;
+    max-width: 70%;
+   }
+   .subtituloContainer{
+    
+   }
+   .buttonsLanding{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       margin-left: 0px;
+   }
+   .whatsappContainerLanding{
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-right: 0px;
+    margin-top: 100px;
+   }
+  }
+  .cb-slideshow,
+.cb-slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    z-index: -1;
+    list-style-type:none;
+    background-color: rgba(92, 92, 92, 0.361);
+}
+.cb-slideshow:after { 
+    content: '';
+    background: transparent repeat top left;
+}
+.cb-slideshow li span { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+
+  animation: imageAnimation 24s linear infinite 0s; 
+}
+.cb-slideshow li:nth-child(1) span { 
+    background-image: url(../../assets/images/p1.jpg); 
+}
+.cb-slideshow li:nth-child(2) span { 
+    background-image: url(../../assets/images/p2.jpg);
+    animation-delay: 4s; 
+}
+.cb-slideshow li:nth-child(3) span { 
+    background-image: url(../../assets/images/p3.jpg);
+    animation-delay: 8s; 
+}
+.cb-slideshow li:nth-child(4) span { 
+    background-image: url(../../assets/images/p4.jpg);
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(5) span { 
+    background-image: url(../../assets/images/p5.jpg);
+    animation-delay: 16s; 
+}
+.cb-slideshow li:nth-child(6) span { 
+    background-image: url(../../assets/images/p6.jpg);
+    animation-delay: 20s; 
+}
+
+
+@keyframes imageAnimation { 
+  0% { opacity: 0; animation-timing-function: ease-in; }
+  8% { opacity: 1; animation-timing-function: ease-out; }
+  17% { opacity: 1 }
+  25% { opacity: 0 }
+  100%,0% { opacity: 0 }
+}
+
+.no-cssanimations .cb-slideshow li span{
+	opacity: 1;
+}

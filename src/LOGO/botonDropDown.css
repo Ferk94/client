@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap');
+
+.botonDropdown {
+  background-color: snow !important;
+  border-color: #f5f5f5 !important;
+  color: slategrey !important;
+  border: 3px solid;
+  height: 45px;
+  width: 100%;
+  
+}
+
+/* .Main {
+  top: 235px;
+  left: 367px;
+  width: 1494px;
+  height: 569px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000059;
+  border-radius: 6px;
+  opacity: 1;
+} */
+.frecuencia_comprobante {
+  float: right;
+}
+.name {
+  /* padding-right: 600px; */
+  text-align: center;
+  font: 18px bold;
+  font-family: "Montserrat";
+  letter-spacing: 0px;
+  color: #0e4a7d;
+  opacity: 1;
+  margin-left: 56px;
+  margin-bottom: 5px;
+}
+@media (min-width: 768px) {
+  .name {
+    margin-left: 50px;
+    font: normal normal bold 18px Montserrat;
+    margin-bottom: 30px;
+  }
+}
+.block-element {
+  background-color: green;
+  margin: 10px;
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  /* margin-left: 220px; */
+  text-align: left;
+  border-collapse: collapse;
+  /*margin: 0 0 1em 0;*/
+  caption-side: top;
+}
+
+.caption,
+td,
+th {
+  padding: 0.3em;
+}
+
+.th,
+td {
+  border-bottom: 1px solid #999;
+  /* width: 5%; */
+}
+
+.odd th,
+.odd td {
+  background: #e3f2f9;
+}
+
+.reinicio {
+  padding-left: 1.2em;
+  position: relative;
+
+  content: "";
+  background: #445da7 0% 0% no-repeat padding-box;
+  width: 0.1em;
+  height: 0.3em;
+  opacity: 1;
+  border-radius: 3px;
+}
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+  padding-bottom:1000px;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+  -webkit-transition: opacity 400ms ease-in;
+-moz-transition: opacity 400ms ease-in;
+transition: opacity 400ms ease-in;
+}
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+.close:hover { background: #00d9ff; }

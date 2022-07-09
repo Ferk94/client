@@ -1,0 +1,133 @@
+.loginContainer{
+    display: flex;
+    justify-content: center; 
+}
+.loginLogo{
+    max-width: 90px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.loginForm{
+    background-color: white;
+    border-radius: 8px;
+    min-width: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+.loginPie{
+    max-width: 300px;
+    margin-bottom: 50px;
+    margin-top: 13px;
+}
+.textform{
+    font-family: 'Carrois Gothic SC', sans-serif;
+    color: rgb(185, 183, 183);
+    margin-left: -60%;
+    
+}
+.textformPass{
+    font-family: 'Carrois Gothic SC', sans-serif;
+    color: rgb(185, 183, 183);
+    margin-left: -50%;
+    margin-top: 40px;
+}
+.loginForm input:focus{
+    outline: none;
+}    
+.loginForm input{
+    min-width: 330px; 
+    border: 1px rgb(185, 183, 183)   solid;
+    border-radius: 25px;
+    min-height: 40px;
+    padding-left: 13px;
+    padding-top: 3px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 14px;
+}
+/* .buttonLoginLogin{
+    background-color:transparent;
+    border-color: #151516;
+    color: #151516;
+    border-radius: 30px;
+    width: 170px;
+    margin-right: 10px;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font: bold;
+    margin-bottom: 50px;
+} */
+/* .buttonLoginLogin:hover{
+    background-color:#fd014e;
+    border-color: #fd014e;
+    color: #fffef4;
+    border-radius: 30px;
+    width: 170px; 
+    margin-right: 10px;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font: bold;
+    margin-bottom: 50px;
+} */
+.buttonLoginLogin{
+    background-color:#5939fa;
+    border-color: #5939fa;
+    color: #fffef4;
+    border-radius: 30px;
+    width: 170px; 
+    margin-right: 10px;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font: bold;
+    margin-bottom: 50px;
+    margin-top: 70px;
+}
+.buttonLoginLogin:hover{
+    background-color:#3e27af;
+    border-color: #3e27af;
+    color: #fffef4;
+    border-radius: 30px;
+    width: 170px; 
+    margin-right: 10px;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font: bold;
+    margin-bottom: 50px;
+}
+.buttonLoginLogin:focus{
+    background-color:#bd0139 !important;
+    border-color: #bd0139 !important;
+    color: #fffef4 !important;
+    box-shadow: none !important;
+}
+.buttonLoginLogin:active{
+    background-color:#bd0139 !important;
+    border-color: #bd0139 !important;
+    color: #fffef4 !important;
+    box-shadow: none !important;
+}
+.errorLogin{
+    margin-top: -15px;
+    margin-bottom: -40px;
+    margin-left: 15px;
+    font-size: 11px;
+    color: #bd0139;
+}
+.loginWelcome{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+.whatsappContainerLogin{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+@media (max-width: 600px) {
+    .whatsappContainerLogin{
+        display: flex;
+        justify-content: center;
+        margin-right: 0px;
+        margin-top: 50px;
+    }
+}

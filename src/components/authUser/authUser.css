@@ -1,0 +1,14 @@
+.authUserModalContainer{
+padding: none !important;
+}
+.authUserModalContainer{
+    background-image: url('../../assets/images/p1.jpg');
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.modal-open{
+    padding: none !important;
+}
+body { padding-right: 0 !important }

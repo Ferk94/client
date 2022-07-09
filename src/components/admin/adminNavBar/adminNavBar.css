@@ -1,0 +1,191 @@
+.navbar {
+    background-color: rgb(252, 245, 245) !important;
+    padding-bottom: 10px;
+}
+
+.logo{
+    border-radius: 150px;
+    width: 20%;
+} 
+.buttons{
+
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight:1200;
+    font-family: 'Fredoka';
+    border: 1px solid rgb(252, 245, 245);
+    background-color: rgb(252, 245, 245) !important;
+    color: rgb(49, 49, 49) !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px !important;
+    box-shadow: 0px 0px 0px 0px #989898b2;
+    height: 30px;
+    margin: 10px !important;
+    transition: none !important;
+}
+.buttons:focus{
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight:1200;
+    font-family: 'Fredoka';
+    border: 1px solid #5939fa !important;
+    background-color: #5939fa !important;
+    color: rgb(252, 245, 245) !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px !important;
+    box-shadow: 0px 3px 5px 0px #989898b2 ;
+    height: 30px;
+    margin: 10px !important;
+}
+.buttons:hover{
+    border-color: transparent;
+    margin: 10px !important;
+   
+}
+.buttons:active{
+    border-color: transparent;
+    margin: 10px !important;
+    box-shadow: 0px 3px 5px 0px #989898b2 !important;
+}
+.navBarButtons{
+    display: flex ;
+    justify-content: center;
+}
+.adminNavBarContainer{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(252, 245, 245);
+    padding-top: 80px;
+}
+.adminNavBarIcon{
+    width: 130px;
+}
+.adminNavBarUp{
+    display: flex;
+    position:absolute;
+    
+    margin-left: -85%;
+    margin-top: -65px;
+    z-index: 100;
+}
+.adminNavBarUpRight{
+    display: flex;
+    position:absolute;
+    
+    margin-right: -70%;
+    margin-top: -70px;
+    z-index: 100;
+}
+.buttonAdminNav{
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight:1200;
+    font-family: 'Fredoka';
+    border: 1px solid #5939fa !important;
+    background-color: #5939fa !important;
+    color: rgb(252, 245, 245) !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px !important;
+    box-shadow: 0px 3px 5px 0px #989898b2 !important;
+    height: 30px;
+    margin: 10px !important;
+    transition: none !important;
+    width: 150px;
+    cursor:auto !important;
+}
+.buttonAdminNav:focus{
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight:1200;
+    font-family: 'Fredoka';
+    border: 1px solid  #5939fa !important;
+    background-color: #5939fa !important;
+    color: rgb(252, 245, 245) !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px !important;
+    box-shadow: 0px 3px 5px 0px #989898b2 ;
+    height: 30px;
+    margin: 10px !important;
+}
+.buttonAdminNav:hover{
+    border-color: transparent;
+    margin: 10px !important;
+   
+}
+.buttonAdminNav:active{
+    border-color: transparent;
+    margin: 10px !important;
+    box-shadow: 0px 3px 5px 0px #989898b2 !important;
+}
+.buttonAdminClose{
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight:1200;
+    font-family: 'Fredoka';
+    border: 1px solid  #777878  !important;
+    background-color:  #777878  !important;
+    color: rgb(252, 245, 245) !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px !important;
+    
+    height: 30px;
+    margin: 10px !important;
+    transition: none !important;
+    width: 150px;
+    box-shadow: 0px 3px 5px 0px #989898b2 !important;
+}
+.buttonAdminClose:focus{
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight:1200;
+    font-family: 'Fredoka';
+    border: 1px solid #5939fa !important;
+    background-color: #5939fa !important;
+    color: rgb(252, 245, 245) !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px !important;
+    box-shadow: 0px 3px 5px 0px #989898b2 ;
+    height: 30px;
+    margin: 10px !important;
+    
+}
+.buttonAdminClose:hover{
+    border-color: transparent;
+    margin: 10px !important;
+    border: 1px solid #5939fa !important;
+    background-color: #5939fa !important;
+   
+}
+.buttonAdminClose:active{
+    border-color: transparent;
+    margin: 10px !important;
+    box-shadow: 0px 3px 5px 0px #989898b2 !important;
+}
+.navBarDivider{
+   display: flex;
+   justify-content: center;
+   margin: -5px;
+   
+}
+.activeNavTernary{
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight:1200;
+    font-family: 'Fredoka';
+    border: 1px solid #5939fa !important;
+    background-color: #5939fa !important;
+    color: rgb(252, 245, 245) !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 30px !important;
+    box-shadow: 0px 0px 0px 0px #989898b2 !important;
+    height: 30px;
+    margin: 10px !important;
+    transition: none !important;
+}

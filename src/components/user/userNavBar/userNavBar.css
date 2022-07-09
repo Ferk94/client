@@ -1,0 +1,23 @@
+.navbar {
+    background-color: black;
+    padding-bottom: 10px;
+}
+
+.logo{
+    border-radius: 150px;
+    width: 20%;
+} 
+.buttons{
+
+    border-radius: 5px;
+    margin-left: 5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: white;
+    color: black;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,17 @@
+.authUserModalContainer{
+    background-image: url('../../assets/images/p1.jpg');
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.modal-open{
+    padding: none !important;
+}
+.spinnerModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+body { padding-right: 0 !important }

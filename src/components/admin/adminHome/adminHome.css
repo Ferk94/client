@@ -1,0 +1,17 @@
+.adminHome {
+    background-color: black;
+    height: 100vh;
+}
+
+
+
+.title-adminHome{
+    display: flex;
+    justify-content:  center;
+    flex-direction: row;
+    color: rgba(255, 217, 0, 0.548);
+    font-style: oblique;
+    font-size: 40px;
+
+    
+}

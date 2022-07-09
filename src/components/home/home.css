@@ -1,0 +1,29 @@
+.homeComponent {
+    background: linear-gradient(10deg, black, #fc1515);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 100%;
+    border-radius: 05px;
+}
+
+.homeTitle {
+    display: flex;
+    justify-content: space-around;
+    font-style: oblique;
+    color: black;
+    font-size: 70px;
+}
+
+.homeCarouselImage {
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    
+}
+
+.homeCarousel {
+    display: flex;
+    border-radius: 150px;
+}
