@@ -9,8 +9,7 @@ import Swal from 'sweetalert2'
 export function AdminEnterprises() {
     const dispatch = useDispatch();
     const [enterprise, setEnterprise] = useState({
-        name: '',
-        logo: ''
+        name: null
     })
     const enterprises = useSelector(state => state.getDataInfo.enterprises);
 

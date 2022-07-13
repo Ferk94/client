@@ -51,10 +51,10 @@ export function UserDownloadModal({downloadZip}) {
             
             <ModalFooter>
                 <Button onClick={(e) => downloadAndClose(e)}>
-                    descargar
+                    Descargar
                 </Button>
                 <Button onClick={(e) => openModal(e)}>
-                    cancelar
+                    Cancelar
                 </Button>
             </ModalFooter>
         </Modal>

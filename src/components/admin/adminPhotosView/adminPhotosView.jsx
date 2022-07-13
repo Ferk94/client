@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux'; 
 import { getExcursionsByCoordinatorId } from '../../../redux/actions/excursionsActions';
 import { getCoordinators } from '../../../redux/actions/coordinatorsActions';
@@ -24,6 +25,7 @@ const [currentPage, setCurrentPage] = useState(1);
 const [excursionIdView, setExcursionIdView] = useState(null);
 const [coordinatorIdView, setCoordinatorIdView] = useState(null);
 
+
 const coordinators = useSelector(state => state.getDataInfo.coordinatorsByEnterprise)
 const excursions = useSelector(state => state.getDataInfo.excursions);
 
@@ -36,12 +38,12 @@ const photosPerPage = 50
         : photos;
 
 
+
 const dispatch = useDispatch();
 
 useEffect(() => {
     dispatch(getCoordinators())
     dispatch(getExcursionsByCoordinatorId(coordinatorIdView))
-    getPhotosByExcursionId(excursionIdView)
     .then(({data})=> setPhotos(data))
     .catch(err => console.error(err))
 }, [])
@@ -113,7 +115,9 @@ function paginado(pageNumber) {
             }
         </Input>
         <br/>
-        <Button style={{marginTop: "20px" ,borderRadius: "30px",fontSize: "11px",fontWeight:"bold",fontFamily: 'Fredoka',letterSpacing:"1px",border: "1px solid #5939fa" ,backgroundColor: "#5939fa" ,height: "35px", width: "250px", boxShadow: "0px 3px 5px 0px #989898b2"}} type="submit" onClick={e => dispatchPhotos(e, excursionIdView)}>Visualizar Fotos</Button>
+        <Button style={{marginTop: "20px" ,borderRadius: "30px",fontSize: "11px",fontWeight:"bold",fontFamily: 'Fredoka',letterSpacing:"1px",border: "1px solid #5939fa" ,backgroundColor: "#5939fa" ,height: "35px", width: "250px", boxShadow: "0px 3px 5px 0px #989898b2"}} type="submit" onClick={e => {
+            dispatchPhotos(e, excursionIdView)
+        }}>Visualizar Fotos</Button>
     </Form>
     { loadingContainer===true ? 
             <Spinner style={{width:"100px", height: "100px", display:"flex", alignSelf:"center", color:"#fd014e"}}/> :

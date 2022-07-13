@@ -6,7 +6,12 @@ import { getCoordinators } from '../../../redux/actions/coordinatorsActions';
 import { getExcursionsByCoordinatorId } from '../../../redux/actions/excursionsActions'
 import { Input, Button, Form } from 'reactstrap';
 import Swal from 'sweetalert2'
+import ReactS3 from 'react-s3';
 
+
+// const secret_key='6Hp5FcRxUWIL5amIPDGaSbjCpb2/Kd3VkFzEn/BK'
+
+// const access_key='AKIA4WT6L7NNGQL3G35D'
 
 export function AdminPhotos() {
     const [FileList, setFileList] = useState([])
@@ -17,7 +22,7 @@ export function AdminPhotos() {
     const excursions = useSelector(state => state.getDataInfo.excursions)
 
 
-    function handleSubmit(e, id) {
+   async function handleSubmit(e, id) {
         e.preventDefault()
         if (!FileList) {
             Swal.fire({
@@ -27,6 +32,7 @@ export function AdminPhotos() {
               })
             return
         }
+        
         const formdata = new FormData();
 
         FileList.forEach(e => {

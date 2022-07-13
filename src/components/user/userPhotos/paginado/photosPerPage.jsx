@@ -55,11 +55,11 @@ export function PhotosPerPage({ currentPhotos, downloadImage, excursionId }) {
                 
                     <div className='photoCard' key={idx}>
                         
-                        <img src={`${BACKEND_URL_PRODUCCION}${img}`} 
+                        <img src={`${img.Location}`} 
                         alt="imagen o ruta rota"
                         style={{width:"100%"}} 
                         onLoad={onLoad}
-                        onClick={()=> getImg(`${BACKEND_URL_PRODUCCION}${img}`)} />
+                        onClick={()=> getImg(`${img.Location}`)} />
                         {
                                 loaded  ?
                                 <div className='spinnerPhotos'><Spinner /></div>
@@ -85,7 +85,7 @@ export function PhotosPerPage({ currentPhotos, downloadImage, excursionId }) {
                     }
 
                     </div>
-                    <Link><img  className="iconDetail" onClick={e => downloadImage(e, `${BACKEND_URL_PRODUCCION}${img}`, `descarga.${img.split('.')[1]}`)} src=".././images/IconDescarga.png" alt="" /></Link>
+                    <Link><img  className="iconDetail" onClick={e => downloadImage(e, `${img.Location}`, `descarga.${img.key.split('/')[0]}`)} src=".././images/IconDescarga.png" alt="" /></Link>
 </>
             ) )
                         

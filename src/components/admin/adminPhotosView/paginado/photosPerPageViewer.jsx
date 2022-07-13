@@ -25,8 +25,8 @@ export function PhotosPerPageViewer({ currentPhotos, excursionId }) {
         }
       })
 
-   
- 
+      (currentPhotos, 'el tipo de arreglo de fotos')
+      
 
     // function toggleModal(){
     //     setModalOpen(!modalOpen)
@@ -59,11 +59,11 @@ export function PhotosPerPageViewer({ currentPhotos, excursionId }) {
                 
                     <div className='photoCard' key={idx}>
                         
-                        <img src={`${BACKEND_URL_PRODUCCION}${img}`}
+                        <img src={`${img.Location}`}
                         alt="alt" 
                         style={{width:"100%"}} 
                         onLoad={onLoad}
-                        onClick={()=> getImg(`${BACKEND_URL_PRODUCCION}${img}`)} />
+                        onClick={()=> getImg(`${img.Location}`)} />
                         {
                                 loaded  ?
                                 <div className='spinnerPhotos'><Spinner /></div>
@@ -89,7 +89,7 @@ export function PhotosPerPageViewer({ currentPhotos, excursionId }) {
                     }
 
                     </div>
-                    <DeletePhotoModal img={img} excursionId={excursionId}/>
+                    <DeletePhotoModal img={img.imgName} excursionId={excursionId}/>
 </>
             ) )
                         
