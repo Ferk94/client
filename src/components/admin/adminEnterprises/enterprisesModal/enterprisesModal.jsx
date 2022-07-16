@@ -5,7 +5,7 @@ import { deleteEnterprise } from "../../../../redux/actions/enterprisesActions";
 
 
 export function EnterprisesModal(evento) {
-
+console.log(evento, 'q viene po props al modal?')
 
     const dispatch = useDispatch();
 

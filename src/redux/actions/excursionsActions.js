@@ -32,7 +32,7 @@ export function postExcursionByCoordinatorId(coordinatorId, excursion){
 export function deleteExcursion(excursionId){
     return async function(dispatch){
         try{
-            await axios.delete(`${REACT_APP_BACKEND_URL_PRODUCCION}excursions`)
+            await axios.delete(`${REACT_APP_BACKEND_URL_PRODUCCION}excursions/${excursionId}`)
             return dispatch({
                 type: 'DELETE_EXCURSION',
                 payload: excursionId

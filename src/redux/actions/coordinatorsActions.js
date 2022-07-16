@@ -27,7 +27,7 @@ export function getCoordinatorsByEnterpriseId(EnterpriseId){
 export function deleteCoordinator(coordinatorId){
     return async function(dispatch){
         try {
-            await axios.delete(`${REACT_APP_BACKEND_URL_PRODUCCION}coordinators`)
+            await axios.delete(`${REACT_APP_BACKEND_URL_PRODUCCION}coordinators/${coordinatorId}`)
             return dispatch({
                 type: 'DELETE_COORDINATOR',
                 payload: coordinatorId

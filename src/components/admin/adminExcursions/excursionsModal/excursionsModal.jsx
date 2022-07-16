@@ -7,7 +7,7 @@ import { deleteExcursion } from "../../../../redux/actions/excursionsActions";
 
 
 export function ExuctionsModal({ value }) {
-
+console.log(value, 'q hay en la pop de excursion?')
 
     const dispatch = useDispatch();
 

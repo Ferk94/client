@@ -29,20 +29,15 @@ export function AdminEnterprises() {
     function handleSubmit(e) {
         e.preventDefault();
         dispatch(postEnterprise(enterprise))
-        setEnterprise({ name: '', logo: '' })
+        setEnterprise({ name: null })
         Swal.fire({
             icon: 'success',
             title: 'Éxito!',
             text: 'Empresa creada correctamente.',
           })
+	dispatch(getEnterprises());
     }
     
-    
-        // function handleRemove(e, id) {
-        //     e.preventDefault();
-        //     dispatch(deleteEnterprise(id))
-        //     alert('Empresa eliminada exitosamente')
-        // }
     
 
 
@@ -83,6 +78,7 @@ export function AdminEnterprises() {
             <tbody>
                     {
                     enterprises.map(e => {
+			console.log(enterprises, 'cada empresa')
                         return <tr className={`invidivualGridCoordinators${e.id%2}`} key={e.id}>
                             <td >{e.name}</td>
                             <td></td>

@@ -15,7 +15,7 @@ export function getEnterprises(){
 export function deleteEnterprise(enterpriseId){
     return async function(dispatch){
         try {
-            axios.delete(`${REACT_APP_BACKEND_URL_PRODUCCION}enterprises/`)
+            axios.delete(`${REACT_APP_BACKEND_URL_PRODUCCION}enterprises/${enterpriseId}`)
             return dispatch({
                 type: 'DELETE_ENTERPRISE',
                 payload: enterpriseId

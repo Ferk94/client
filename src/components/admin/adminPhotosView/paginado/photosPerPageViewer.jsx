@@ -1,7 +1,6 @@
-import './photosPerPageViewer.css'
-import { useState, useRef, useEffect } from 'react';
+import './photosPerPageViewer.css';
+import { useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
-import { Spinner } from 'reactstrap'
 import { DeletePhotoModal } from '../deletePhotoModal/deletePhotoModal';
 
 
@@ -9,40 +8,22 @@ const BACKEND_URL_PRODUCCION = process.env.REACT_APP_BACKEND_URL_PRODUCCION;
 
 export function PhotosPerPageViewer({ currentPhotos, excursionId }) {
 
-    const [model, setModel] = useState(false)
-    const [exitModel, setExitModel] = useState(false)
-    const [tempImgSrc, setTempImgSrc] = useState("")
-    const [loaded, setLoaded] = useState(true)
-    const ref = useRef()
-
-    const onLoad = () => {
-        setLoaded(false)
-      }
-    
-      useEffect(() => {
-        if (ref.current && ref.current.complete) {
-          onLoad()
-        }
-      })
-
-      (currentPhotos, 'el tipo de arreglo de fotos')
+    const [model, setModel] = useState(false);
+    const [exitModel, setExitModel] = useState(false);
+    const [tempImgSrc, setTempImgSrc] = useState("");
       
-
-    // function toggleModal(){
-    //     setModalOpen(!modalOpen)
-    // }
     const getImg = (imgSrc)=>{
         setTempImgSrc(imgSrc);
         setModel(true);
         setTimeout(() => {
-            setExitModel(true)
-        }, 500)
-    }
+            setExitModel(true);
+        }, 500);
+    };
     function closeModel (e){
         e.preventDefault();
         setModel(false);
-        setExitModel(false)
-    }
+        setExitModel(false);
+    };
 
 
     return (
@@ -62,14 +43,8 @@ export function PhotosPerPageViewer({ currentPhotos, excursionId }) {
                         <img src={`${img.Location}`}
                         alt="alt" 
                         style={{width:"100%"}} 
-                        onLoad={onLoad}
                         onClick={()=> getImg(`${img.Location}`)} />
-                        {
-                                loaded  ?
-                                <div className='spinnerPhotos'><Spinner /></div>
-                                :
-                                <></>
-                            }
+
                         {exitModel===true ?
                         <CloseIcon 
                         onClick={e => closeModel(e)} 
