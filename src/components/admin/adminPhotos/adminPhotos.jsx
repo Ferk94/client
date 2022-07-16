@@ -4,7 +4,7 @@ import './adminPhotos.css'
 import { postPhotosByExcursionId } from "../../../services/api"
 import { getCoordinators } from '../../../redux/actions/coordinatorsActions';
 import { getExcursionsByCoordinatorId } from '../../../redux/actions/excursionsActions'
-import { Input, Button, Form } from 'reactstrap';
+import { Input, Button, Form, Spinner } from 'reactstrap';
 import Swal from 'sweetalert2'
 import ReactS3 from 'react-s3';
 
@@ -17,13 +17,21 @@ export function AdminPhotos() {
     const [FileList, setFileList] = useState([])
     const [excursionId, setExcursionId] = useState(null)
     const [coordinatorId, setCoordinatorId] = useState(null)
+    const [loading, setLoading] = useState(false)
     const dispatch = useDispatch();
     const coordinators = useSelector(state => state.getDataInfo.coordinatorsByEnterprise)
     const excursions = useSelector(state => state.getDataInfo.excursions)
 
+console.log(loading, 'el loading')
+
+function onLoad (loading){
+    setLoading(!loading)
+}
+
 
    async function handleSubmit(e, id) {
         e.preventDefault()
+        setLoading(true)
         if (!FileList) {
             Swal.fire({
                 icon: 'error',
@@ -39,10 +47,11 @@ export function AdminPhotos() {
             return formdata.append('images', e)
         })
 
-        postPhotosByExcursionId(id, formdata)
+        postPhotosByExcursionId(id, formdata, onLoad, loading)
+            document.getElementById('file').value = null
+            setFileList(null)
 
-        document.getElementById('file').value = null
-        setFileList(null)
+       
     }
 
     useEffect(() => {
@@ -74,16 +83,7 @@ export function AdminPhotos() {
         setExcursionId(e.target.value)
     }
 
-
-    // function coordinatorName(id){      
-    //     if(coordinatorId === null) return "" ;
-    //     if(coordinatorId !== null) {
-    //         const coordinator = coordinators?.find(e => e.id.toString() === id.toString())
-    //         const nombre= coordinator.name
-    //         return ` de ${nombre}`;
-    //     }
-    // }
-
+   
     return <div className='componentAdminPhotos'>
         
 <br/>
@@ -135,5 +135,8 @@ export function AdminPhotos() {
             
             <Button style={{marginTop: "20px" ,borderRadius: "30px",fontSize: "11px",fontWeight:"bold",fontFamily: 'Fredoka',letterSpacing:"1px",border: "1px solid #5939fa" ,backgroundColor: "#5939fa" ,height: "35px", width: "250px", boxShadow: "0px 3px 5px 0px #989898b2"}} type="submit" onClick={e => handleSubmit(e, excursionId)}>Postear</Button>
         </Form>
+
+       { loading === true ? <Spinner style={{display: 'flex', alignSelf: 'center', marginTop : '2%'}}/> : <></> }
+
     </div>
 }

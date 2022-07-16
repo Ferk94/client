@@ -24,16 +24,21 @@ export function getPhotosByExcursionId(excursionId){
   
 }
 
-export function postPhotosByExcursionId(excursionId, photos){
+export function postPhotosByExcursionId(excursionId, photos, onLoad, loading){
+  onLoad(loading)
   axios.post(`${BACKEND_URL_PRODUCCION}photos/${excursionId}`, photos)
   .then(response => {
+    onLoad(true)
     Swal.fire({
       icon: 'success',
       title: 'Éxito!',
       text: 'Se han posteado y asociado las correctamente.',
     })
   })
-  .catch(err => console.error(err));
+  .catch(err => {
+    onLoad(true)
+    console.error(err)
+  });
 }
 
 export function deletePhoto(excursionId, id, name){

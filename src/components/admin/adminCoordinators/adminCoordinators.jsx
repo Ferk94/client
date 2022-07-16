@@ -12,7 +12,7 @@ import { CoordinatorsModal } from "./coordinatorsModal/coordinatorsModal.jsx";
 import Swal from 'sweetalert2'
 
 export function AdminCoordinators() {
-  const initialState = { name: "" };
+  const initialState = { name: "", dropbox: ""};
 
   const [coordinator, setCoordinator] = useState(initialState);
   const [EnterpriseId, setEnterpriseId] = useState(null);
@@ -45,12 +45,14 @@ export function AdminCoordinators() {
   function handleChange(e) {
     e.preventDefault();
     setCoordinator({
-      name: e.target.value,
+      ...coordinator,
+      [e.target.name]: e.target.value,
     });
   }
 
   function handleSubmit(e, id) {
     e.preventDefault();
+    console.log(coordinator, 'q hay en el objeto coordinator?')
     dispatch(postCoordinator(EnterpriseId, coordinator));
     setEnterpriseId(null);
     setCoordinator(initialState);
@@ -94,6 +96,19 @@ export function AdminCoordinators() {
             name="name"
             id="name"
             placeholder="Nombre y apellido"
+            onChange={(e) => handleChange(e)}
+          ></Input>
+          <Input
+            style={{
+              boxShadow: "-3px 4px 5px 0px #989898b2",
+              fontFamily: "Fredoka",
+              fontSize: "12px",
+            }}
+            className="inputSelectSearch"
+            type="text"
+            name="dropbox"
+            id="dropbox"
+            placeholder="link de dropbox"
             onChange={(e) => handleChange(e)}
           ></Input>
           <Input
@@ -161,6 +176,19 @@ export function AdminCoordinators() {
             name="name"
             id="name"
             placeholder="Nombre y apellido"
+            onChange={(e) => handleChange(e)}
+          ></Input>
+          <Input
+            style={{
+              boxShadow: "-3px 4px 5px 0px #989898b2",
+              fontFamily: "Fredoka",
+              fontSize: "12px",
+            }}
+            className="inputSelectSearch"
+            type="text"
+            name="dropbox"
+            id="dropbox"
+            placeholder="link de dropbox"
             onChange={(e) => handleChange(e)}
           ></Input>
           <Input
@@ -243,6 +271,19 @@ export function AdminCoordinators() {
             name="name"
             id="name"
             placeholder="Nombre y apellido"
+            onChange={(e) => handleChange(e)}
+          ></Input>
+          <Input
+            style={{
+              boxShadow: "-3px 4px 5px 0px #989898b2",
+              fontFamily: "Fredoka",
+              fontSize: "12px",
+            }}
+            className="inputSelectSearch"
+            type="text"
+            name="dropbox"
+            id="dropbox"
+            placeholder="link de dropbox"
             onChange={(e) => handleChange(e)}
           ></Input>
           <Input

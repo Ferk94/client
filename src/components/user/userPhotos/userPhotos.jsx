@@ -23,11 +23,15 @@ export function UserPhotos({ userInfo }) {
     const [excursionId, setExcursionId] = useState(null); 
     const [showButton, setShowButton] = useState(false)
     const excursions = useSelector(state => state.getDataInfo.excursions)
+    const coordinators = useSelector(state => state.getDataInfo.coordinators)
     const [currentPage, setCurrentPage] = useState(1);
     const [loadingContainer, setLoadingContainer] = useState(false)
     const dispatch = useDispatch();
 
+    console.log(coordinators, 'coodinadores q vienen 31')
+    console.log(userInfo, 'la userinfo')
 
+    const coordinator = coordinators?.find(e => userInfo.coordinatorId === e.id)
 
     const history = useHistory();
     const photosPerPage = 9
@@ -71,6 +75,8 @@ export function UserPhotos({ userInfo }) {
         })
     }
 
+    
+
 
 
     function handleSignOut(e) {
@@ -106,7 +112,12 @@ export function UserPhotos({ userInfo }) {
         <div className='userPhotosPie'><strong>Recordá que tu book estará disponible durante 15 días desde que iniciaste sesión.</strong></div>
         <br />
         <br />
-        <UserDownloadModal downloadZip={downloadZip}/>
+        {/* <UserDownloadModal downloadZip={downloadZip}/> */}
+        <Button className='descargarTodo'>
+            <a className='homeLink' href={`${coordinator.dropbox}`} target='blank' rel='noreferrer'>
+            Descargar todo
+            </a>
+            </Button>
         <div className='excursionButtons'>
             {
                 excursions.map((e, i) => {
@@ -136,7 +147,12 @@ export function UserPhotos({ userInfo }) {
             <br />
             <br />
             <div className='downloadAllButton'>
-            <UserDownloadModal downloadZip={downloadZip}/>
+            {/* <UserDownloadModal downloadZip={downloadZip}/> */}
+            <Button className='descargarTodo'>
+            <a className='homeLink' href={`${coordinator.dropbox}`} target='blank' rel='noreferrer'>
+            Descargar todo
+            </a>
+            </Button>
             </div>
             <div className='excursionButtons'>
                 {
@@ -177,7 +193,12 @@ export function UserPhotos({ userInfo }) {
             <br />
             <br />
             <div className='downloadAllButton'>
-            <UserDownloadModal downloadZip={downloadZip}/>
+            {/* <UserDownloadModal downloadZip={downloadZip}/> */}
+            <a className='homeLink' href={`${coordinator.dropbox}`} target='_blank' rel='noreferrer'>
+            <Button className='descargarTodo'>
+            Descargar todo
+            </Button>
+            </a>
             </div>
             <div className='excursionButtons'>
                 {
