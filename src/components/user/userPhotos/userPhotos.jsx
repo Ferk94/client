@@ -42,32 +42,32 @@ export function UserPhotos({ userInfo }) {
     if(coordinator.name === 'Oriana'){
         coordinator = {
             ...coordinator,
-            zip: 'https://www.dropbox.com/t/BF5bCwrGWxdju5OL'
+            celular: 'https://www.dropbox.com/sh/0ulr0j77arltzu1/AACMmuIAJHOYM3cO5NgVaHnfa?dl=0'
         }        
     }else if(coordinator.name === 'Javier'){
         coordinator = {
             ...coordinator,
-            zip: 'https://www.dropbox.com/t/tXaxHHUnouT7tqEn'
+            celular: 'https://www.dropbox.com/sh/gm2t769308h137e/AABOjKAv2hWSPUs7mVoMZ9m_a?dl=0'
         }  
     }else if(coordinator.name === 'Mati Arana'){
         coordinator = {
             ...coordinator,
-            zip: 'https://www.dropbox.com/t/duAOrhjtofhCrVFi'
+            celular: 'https://www.dropbox.com/sh/0ulr0j77arltzu1/AACMmuIAJHOYM3cO5NgVaHnfa?dl=0'
         }  
     }else if(coordinator.name === 'Mati Zimes'){
         coordinator = {
             ...coordinator,
-            zip: 'https://www.dropbox.com/t/3Z1XWErDdjorvBOQ'
+            celular: 'https://www.dropbox.com/sh/rdsottwl1cubspy/AADJZIbImlh7gAA21inL_fEza?dl=0'
         }  
     }else if(coordinator.name === 'Mely'){
         coordinator = {
             ...coordinator,
-            zip: 'https://www.dropbox.com/t/ZfbpT88vSpt60Hoq'
+            celular: 'https://www.dropbox.com/sh/sfe1pb1re9wu3j6/AAA7NJ2Kz5WNApZZ-bykbADGa?dl=0'
         }  
     }else if(coordinator.name === 'Nahuel Cañete'){
         coordinator = {
             ...coordinator,
-            zip: 'https://www.dropbox.com/t/0jEsUgN3QD1xSVxr'
+            celular: 'https://www.dropbox.com/sh/xyazeuc01cx62b7/AADAuJNYAM6y_0cfTan5zD-aa?dl=0'
         }  
     }
 
@@ -242,7 +242,7 @@ export function UserPhotos({ userInfo }) {
             <div className="phoneText">
                 Elegí el link que mas te convenga, si elegis PC vas a descargar un archivo .ZIP con todas las fotos de tu viaje de egresados.
             </div>
-            <a className='homeLink' href={`${coordinator.zip}`} target='_blank' rel='noreferrer'>
+            <a className='homeLink' href={`${coordinator.dropbox}`} target='_blank' rel='noreferrer'>
             <Button className='descargarTodo'>
             Descargar todo
             </Button>
@@ -254,7 +254,7 @@ export function UserPhotos({ userInfo }) {
                 Elegí el link que mas te convenga, si elegis CELULAR nuestro boton va a dirigirte a Dropbox, no es necesario descargar la aplicación. Solo ingresas a la excursión que desees y elegis la foto que mas te guste y pones descargar!
             </div>
             {/* <UserDownloadModal downloadZip={downloadZip}/> */}
-            <a className='homeLink' href={`${coordinator.dropbox}`} target='_blank' rel='noreferrer'>
+            <a className='homeLink' href={`${coordinator.celular}`} target='_blank' rel='noreferrer'>
             <Button className='descargarTodo'>
             Descargar todo
             </Button>
