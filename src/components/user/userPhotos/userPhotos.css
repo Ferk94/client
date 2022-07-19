@@ -228,9 +228,9 @@
 }
 @media(max-width: 420px) {
     .buttonUserExit{
-        font-size: 6px;
+        font-size: 7px;
         height: 23px;
-        width: 100px;
+        width: 110px;
        
     }
     
