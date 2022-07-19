@@ -52,7 +52,7 @@ export function UserPhotos({ userInfo }) {
     }else if(coordinator.name === 'Mati Arana'){
         coordinator = {
             ...coordinator,
-            celular: 'https://www.dropbox.com/sh/0ulr0j77arltzu1/AACMmuIAJHOYM3cO5NgVaHnfa?dl=0'
+            celular: 'https://www.dropbox.com/sh/7me9luss4uarfck/AAB3UpzmCntue9_o3FdcdUHDa?dl=0'
         }  
     }else if(coordinator.name === 'Mati Zimes'){
         coordinator = {
