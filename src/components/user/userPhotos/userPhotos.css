@@ -64,7 +64,6 @@
 .buttonUserExit{
     align-self: flex-end;
     border-radius: 30px;
-    font-size: 9px;
     font-weight:1200;
     font-family: 'Fredoka';
     border: 1px solid  #777878  !important;
@@ -73,11 +72,11 @@
     font-weight: bold;
     letter-spacing: 1px;
     border-radius: 30px !important;
-    
+    font-size: 9px;
     height: 30px;
+    width: 150px;
     margin: 10px !important;
     transition: none !important;
-    width: 150px;
     box-shadow: 0px 3px 5px 0px #989898b2 !important;
 }
 .buttonUserExit:focus{
@@ -119,22 +118,28 @@
     margin-top: 50px;
     position: absolute;
 }
-.phoneText{
-    width: 350px;
+.containerPCText{
+    width: 650px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     align-self: center;
-    font-family: 'Fredoka';
-    color: #fffef4;
-    background-color: #5939fad5;
-    margin-bottom: -10px;
-    padding-bottom: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    background-color: #E6E6E6;
+    text-align: center;
+    margin-bottom: -35px;
+    padding-bottom: 50px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
     border-radius: 5px;
+}
+.PCText{
+    margin-left:15px ;
+    margin-right: 15px;
 }
 .downloadAllButton{
     display: flex;
@@ -145,13 +150,15 @@
     align-self: center;
 }
 .descargarTodo{
-    background-color:#5939fa;
-    border-color: #5939fa;
+    background-color:#745afb;
+    border-color: #745afb;
     color: #fffef4;
     border-radius: 30px;
-    min-width: 400px; 
+    min-width: 190px; 
+    font-size: 14px;
+    height: 22px;
     margin: 6px;
-    font-family: 'Fredoka';
+    font-family: 'Arimo', sans-serif;
     white-space: nowrap;
     width: fit-content;
     display:flex;
@@ -182,10 +189,23 @@
 }
 @media(max-width: 1150px) {
     .photosLogo{
-        display: none;
+        width: 100px;
+        margin-top: 15px
     }
 }
 @media(max-width: 750px) {
+    .photosLogo{
+        margin-left: 20px;
+    }
+    .buttonUserExit{
+        font-size: 8px;
+        height: 25px;
+        width: 100px;
+    }
+    .containerPCText{
+        font-size: 12px;
+        width: 80%;
+    }
     .userPhotosTitle{
         display: flex;
         justify-content: center;
@@ -207,6 +227,13 @@
     }
 }
 @media(max-width: 420px) {
+    .buttonUserExit{
+        font-size: 7px;
+        height: 23px;
+        width: 85px;
+       
+    }
+    
     .userPhotosTitle{
         display: flex;
         justify-content: center;
