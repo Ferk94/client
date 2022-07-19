@@ -227,19 +227,14 @@
     }
 }
 @media(max-width: 420px) {
-    .buttonUserExit{
-        font-size: 5px;
-        height: 22px;
-        width: 85px;
-       
-    }
+   
     
     .userPhotosTitle{
         display: flex;
         justify-content: center;
         font-family: 'Poppins', sans-serif;
         font-weight: bold;
-        font-size: 75%;
+        font-size: 100%;
     }
     .excursionButtons{
         display: flex;
