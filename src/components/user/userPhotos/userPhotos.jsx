@@ -26,12 +26,50 @@ export function UserPhotos({ userInfo }) {
     const coordinators = useSelector(state => state.getDataInfo.coordinators)
     const [currentPage, setCurrentPage] = useState(1);
     const [loadingContainer, setLoadingContainer] = useState(false)
+    //const [ excursionsIdByCoordinator, setExcursionsIdByCoordinator ] = useState([])
+    
     const dispatch = useDispatch();
+
+    
 
     console.log(coordinators, 'coodinadores q vienen 31')
     console.log(userInfo, 'la userinfo')
 
-    const coordinator = coordinators?.find(e => userInfo.coordinatorId === e.id)
+    var coordinator = coordinators?.find(e => userInfo.coordinatorId === e.id)
+    
+
+
+    if(coordinator.name === 'Oriana'){
+        coordinator = {
+            ...coordinator,
+            zip: 'https://www.dropbox.com/t/BF5bCwrGWxdju5OL'
+        }        
+    }else if(coordinator.name === 'Javier'){
+        coordinator = {
+            ...coordinator,
+            zip: 'https://www.dropbox.com/t/tXaxHHUnouT7tqEn'
+        }  
+    }else if(coordinator.name === 'Mati Arana'){
+        coordinator = {
+            ...coordinator,
+            zip: 'https://www.dropbox.com/t/duAOrhjtofhCrVFi'
+        }  
+    }else if(coordinator.name === 'Mati Zimes'){
+        coordinator = {
+            ...coordinator,
+            zip: 'https://www.dropbox.com/t/3Z1XWErDdjorvBOQ'
+        }  
+    }else if(coordinator.name === 'Mely'){
+        coordinator = {
+            ...coordinator,
+            zip: 'https://www.dropbox.com/t/ZfbpT88vSpt60Hoq'
+        }  
+    }else if(coordinator.name === 'Nahuel Cañete'){
+        coordinator = {
+            ...coordinator,
+            zip: 'https://www.dropbox.com/t/0jEsUgN3QD1xSVxr'
+        }  
+    }
 
     const history = useHistory();
     const photosPerPage = 9
@@ -59,10 +97,14 @@ export function UserPhotos({ userInfo }) {
         e.preventDefault()
         saveAs(data, name)
     }
-
+    // useEffect(() => {
+    //     getPhotosByExcursionId()
+        
+    // }, []) 
 
     function downloadZip(e) {
         e.preventDefault()
+
         if(zipPhotos.length === 0){
             alert("No hay fotos asociadas a esa excursión, pruebe con otra.")
             return;
@@ -118,17 +160,17 @@ export function UserPhotos({ userInfo }) {
             Descargar todo
             </a>
             </Button>
-        <div className='excursionButtons'>
+        {/* <div className='excursionButtons'>
             {
                 excursions.map((e, i) => {
                     return <Button key={i} className="btn-excursion" onClick={event => handleGetPhotos(event, e.id)}>{e.name}</Button>
                 })
             }
          
-        </div>
-        <h1 className='userPhotosPie'><strong>No hay fotos asociadas a esta excursión</strong></h1>
+        </div> */}
+        {/* <h1 className='userPhotosPie'><strong>No hay fotos asociadas a esta excursión</strong></h1>
         <br></br>
-        <div className='userPhotosPie'>No se preocupe, de seguro habrá en alguna otra excursión</div>
+        <div className='userPhotosPie'>No se preocupe, de seguro habrá en alguna otra excursión</div> */}
         </div>
     </div>
     }
@@ -148,21 +190,24 @@ export function UserPhotos({ userInfo }) {
             <br />
             <div className='downloadAllButton'>
             {/* <UserDownloadModal downloadZip={downloadZip}/> */}
+            <div className="phoneText">
+                Elegí el link que mas te convenga, si elegis CELULAR nuestro boton va a dirigirte a Dropbox, no es necesario descargar la aplicación. Solo ingresas a la excursión que desees y elegis la foto que mas te guste y pones descargar!
+            </div>
             <Button className='descargarTodo'>
             <a className='homeLink' href={`${coordinator.dropbox}`} target='blank' rel='noreferrer'>
             Descargar todo
             </a>
             </Button>
             </div>
-            <div className='excursionButtons'>
+            {/* <div className='excursionButtons'>
                 {
                     excursions.map(e => {
                         return<Button className="btn-excursion" onClick={event => handleGetPhotos(event, e.id)}>{e.name}</Button>
                     })
                 }
+            </div> */}
             </div>
-            </div>
-            { loadingContainer===true ? 
+            {/* { loadingContainer===true ? 
             <Spinner style={{width:"100px", height: "100px", display:"flex", alignSelf:"center", color:"#5939fa"}}/> :
                 <PhotosPerPage
                 downloadImage={downloadImage}
@@ -170,14 +215,14 @@ export function UserPhotos({ userInfo }) {
                 downloadZip={downloadZip}
                 excursionId={excursionId}
             />
-            }
+            } */}
             
-            <Pagination
+            {/* <Pagination
                 photosPerPage={photosPerPage}
                 allPhotos={photos?.length}
                 paginado={paginado}
                 currentPhotos={currentPhotos}
-            />
+            /> */}
         </div >
     } else {
         return <div className='userPhotos'>
@@ -192,7 +237,22 @@ export function UserPhotos({ userInfo }) {
             <div className='userPhotosPie'><strong>Recordá que tu book estará disponible durante 15 días desde que iniciaste sesión.</strong></div>
             <br />
             <br />
+                        {/* ---NUEVO BOTON */}
             <div className='downloadAllButton'>
+            <div className="phoneText">
+                Elegí el link que mas te convenga, si elegis PC vas a descargar un archivo .ZIP con todas las fotos de tu viaje de egresados.
+            </div>
+            <a className='homeLink' href={`${coordinator.zip}`} target='_blank' rel='noreferrer'>
+            <Button className='descargarTodo'>
+            Descargar todo
+            </Button>
+            </a>
+            </div>
+                        {/* -------  */}
+            <div className='downloadAllButton'>
+            <div className="phoneText">
+                Elegí el link que mas te convenga, si elegis CELULAR nuestro boton va a dirigirte a Dropbox, no es necesario descargar la aplicación. Solo ingresas a la excursión que desees y elegis la foto que mas te guste y pones descargar!
+            </div>
             {/* <UserDownloadModal downloadZip={downloadZip}/> */}
             <a className='homeLink' href={`${coordinator.dropbox}`} target='_blank' rel='noreferrer'>
             <Button className='descargarTodo'>
@@ -200,17 +260,17 @@ export function UserPhotos({ userInfo }) {
             </Button>
             </a>
             </div>
-            <div className='excursionButtons'>
+            {/* <div className='excursionButtons'>
                 {
                     excursions.map((e, i) => {
                         return <Button key={i} className="btn-excursion" onClick={event => handleGetPhotos(event, e.id)}>{e.name}</Button>
                     })
                 }
              
-            </div>
-            <h1 className='userPhotosPie'><strong>Aquí aparecerán las fotos de sus excursiones</strong></h1>
+            </div> */}
+            {/* <h1 className='userPhotosPie'><strong>Aquí aparecerán las fotos de sus excursiones</strong></h1>
             <br></br>
-            <div className='userPhotosPie'>Recordá que debes filtrar por alguna excursión para ver su respectivo book.</div>
+            <div className='userPhotosPie'>Recordá que debes filtrar por alguna excursión para ver su respectivo book.</div> */}
             </div>
         </div>
     }
