@@ -142,90 +142,6 @@ export function UserPhotos({ userInfo }) {
     }
 
 
-    if(showButton === true && photos.length === 0){
-        return <div className='userPhotos'>
-        <Button className='buttonUserExit' onClick={(e) => handleSignOut(e)}>Cerrar sesion</Button>
-        
-  <img className="photosLogo" src="../images/LogoNegro.png" alt="" />
-        <div className='userPhotosTitle'>
-        <strong>Bienvenido/a {userInfo?.name} a tu QBOOK.</strong>
-        </div>
-        <div className='userPhotosCenter'>
-        <div className='userPhotosPie'>Descargá las fotos que más te gusten o utilizá el botón <strong>  DESCARGAR TODO.</strong></div>
-        <div className='userPhotosPie'><strong>Recordá que tu book estará disponible durante 15 días desde que iniciaste sesión.</strong></div>
-        <br />
-        <br />
-        {/* <UserDownloadModal downloadZip={downloadZip}/> */}
-        <Button className='descargarTodo'>
-            <a className='homeLink' href={`${coordinator.dropbox}`} target='blank' rel='noreferrer'>
-            Descargar todo
-            </a>
-            </Button>
-        {/* <div className='excursionButtons'>
-            {
-                excursions.map((e, i) => {
-                    return <Button key={i} className="btn-excursion" onClick={event => handleGetPhotos(event, e.id)}>{e.name}</Button>
-                })
-            }
-         
-        </div> */}
-        {/* <h1 className='userPhotosPie'><strong>No hay fotos asociadas a esta excursión</strong></h1>
-        <br></br>
-        <div className='userPhotosPie'>No se preocupe, de seguro habrá en alguna otra excursión</div> */}
-        </div>
-    </div>
-    }
-    
-    if (showButton === true && photos.length > 0) {
-        return <div className="userPhotos">
-                 <Button className='buttonUserExit' onClick={(e) => handleSignOut(e)}>Cerrar sesion</Button>
-            
-      <img className="photosLogo" src="../images/LogoNegro.png" alt="logoBlancologin" />
-            <div className='userPhotosTitle'>
-            <strong>Bienvenido/a {userInfo?.name} a tu QBOOK.</strong>
-            </div>
-            <div className='userPhotosCenter'>
-            <div className='userPhotosPie'>Descargá las fotos que más te gusten o utilizá el botón <strong>  DESCARGAR TODO.</strong></div>
-            <div className='userPhotosPie'><strong>Recordá que tu book estará disponible durante 15 días desde que iniciaste sesión.</strong></div>
-            <br />
-            <br />
-            <div className='downloadAllButton'>
-            {/* <UserDownloadModal downloadZip={downloadZip}/> */}
-            <div className="phoneText">
-                Elegí el link que mas te convenga, si elegis CELULAR nuestro boton va a dirigirte a Dropbox, no es necesario descargar la aplicación. Solo ingresas a la excursión que desees y elegis la foto que mas te guste y pones descargar!
-            </div>
-            <Button className='descargarTodo'>
-            <a className='homeLink' href={`${coordinator.dropbox}`} target='blank' rel='noreferrer'>
-            Descargar todo
-            </a>
-            </Button>
-            </div>
-            {/* <div className='excursionButtons'>
-                {
-                    excursions.map(e => {
-                        return<Button className="btn-excursion" onClick={event => handleGetPhotos(event, e.id)}>{e.name}</Button>
-                    })
-                }
-            </div> */}
-            </div>
-            {/* { loadingContainer===true ? 
-            <Spinner style={{width:"100px", height: "100px", display:"flex", alignSelf:"center", color:"#5939fa"}}/> :
-                <PhotosPerPage
-                downloadImage={downloadImage}
-                currentPhotos={currentPhotos}
-                downloadZip={downloadZip}
-                excursionId={excursionId}
-            />
-            } */}
-            
-            {/* <Pagination
-                photosPerPage={photosPerPage}
-                allPhotos={photos?.length}
-                paginado={paginado}
-                currentPhotos={currentPhotos}
-            /> */}
-        </div >
-    } else {
 
         return <div className='userPhotos'>
             <Button className='buttonUserExit' onClick={(e) => handleSignOut(e)}>Cerrar sesion</Button>
@@ -291,5 +207,5 @@ export function UserPhotos({ userInfo }) {
             <div className='userPhotosPie'>Recordá que debes filtrar por alguna excursión para ver su respectivo book.</div> */}
             </div>
         </div>
-    }
+    
 }
