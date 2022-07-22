@@ -22,8 +22,8 @@ export function UserPhotos({ userInfo }) {
     const [zipPhotos, setZipPhotos] = useState([]);
     const [excursionId, setExcursionId] = useState(null); 
     const [showButton, setShowButton] = useState(false)
-    const excursions = useSelector(state => state.getDataInfo.excursions)
-    const coordinators = useSelector(state => state.getDataInfo.coordinators)
+    const excursions = useSelector(state => state?.getDataInfo.excursions)
+    const coordinators = useSelector(state => state?.getDataInfo.coordinators)
     const [currentPage, setCurrentPage] = useState(1);
     const [loadingContainer, setLoadingContainer] = useState(false)
     const dispatch = useDispatch();
@@ -31,14 +31,14 @@ export function UserPhotos({ userInfo }) {
     console.log(coordinators, 'coodinadores q vienen 31')
     console.log(userInfo, 'la userinfo')
 
-    const coordinator = coordinators?.find(e => userInfo.coordinatorId === e.id)
+    const coordinator = coordinators?.find(e => userInfo?.coordinatorId === e.id)
 
     const history = useHistory();
     const photosPerPage = 9
     const indexLastPhoto = currentPage * photosPerPage;
     const indexFirstPhoto = indexLastPhoto - photosPerPage;
     const currentPhotos = Array.isArray(photos)
-        ? photos.slice(indexFirstPhoto, indexLastPhoto)
+        ? photos?.slice(indexFirstPhoto, indexLastPhoto)
         : photos;
 
     function paginado(pageNumber) {
@@ -98,7 +98,7 @@ export function UserPhotos({ userInfo }) {
             .then(({ data }) => setZipPhotos(data))
             .catch(err => console.error(err))
     }
-
+console.log('llego hasta aca?')
         return <div className='userPhotos'>
             <Button className='buttonUserExit' onClick={(e) => handleSignOut(e)}>Cerrar sesion</Button>
             
