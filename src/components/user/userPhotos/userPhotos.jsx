@@ -62,7 +62,7 @@ export function UserPhotos({ userInfo }) {
     }else if(coordinator.name === 'Mely'){
         coordinator = {
             ...coordinator,
-            celular: 'https://www.dropbox.com/sh/sfe1pb1re9wu3j6/AAA7NJ2Kz5WNApZZ-bykbADGa?dl=0'
+            celular: 'https://www.dropbox.com/t/zZTfnQFXDni5rABt'
         }  
     }else if(coordinator.name === 'Nahuel Cañete'){
         coordinator = {
