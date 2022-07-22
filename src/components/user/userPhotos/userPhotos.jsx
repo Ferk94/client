@@ -22,8 +22,8 @@ export function UserPhotos({ userInfo }) {
     const [zipPhotos, setZipPhotos] = useState([]);
     const [excursionId, setExcursionId] = useState(null); 
     const [showButton, setShowButton] = useState(false)
-    const excursions = useSelector(state => state.getDataInfo.excursions)
-    const coordinators = useSelector(state => state.getDataInfo.coordinators)
+    const excursions = useSelector(state => state?.getDataInfo?.excursions)
+    const coordinators = useSelector(state => state?.getDataInfo?.coordinators)
     const [currentPage, setCurrentPage] = useState(1);
     const [loadingContainer, setLoadingContainer] = useState(false)
     //const [ excursionsIdByCoordinator, setExcursionsIdByCoordinator ] = useState([])
@@ -35,37 +35,37 @@ export function UserPhotos({ userInfo }) {
     console.log(coordinators, 'coodinadores q vienen 31')
     console.log(userInfo, 'la userinfo')
 
-    var coordinator = coordinators?.find(e => userInfo.coordinatorId === e.id)
+    var coordinator = coordinators?.find(e => userInfo?.coordinatorId === e.id)
     
 
 
-    if(coordinator.name === 'Oriana'){
+    if(coordinator && coordinator?.name === 'Oriana'){
         coordinator = {
             ...coordinator,
             celular: 'https://www.dropbox.com/sh/0ulr0j77arltzu1/AACMmuIAJHOYM3cO5NgVaHnfa?dl=0'
         }        
-    }else if(coordinator.name === 'Javier'){
+    }else if(coordinator && coordinator?.name === 'Javier'){
         coordinator = {
             ...coordinator,
             celular: 'https://www.dropbox.com/sh/gm2t769308h137e/AABOjKAv2hWSPUs7mVoMZ9m_a?dl=0'
         }  
-    }else if(coordinator.name === 'Mati Arana'){
+    }else if(coordinator && coordinator?.name === 'Mati Arana'){
         coordinator = {
             ...coordinator,
             celular: 'https://www.dropbox.com/sh/7me9luss4uarfck/AAB3UpzmCntue9_o3FdcdUHDa?dl=0'
         }  
-    }else if(coordinator.name === 'Mati Zimes'){
+    }else if(coordinator && coordinator?.name === 'Mati Zimes'){
         coordinator = {
             ...coordinator,
             celular: 'https://www.dropbox.com/sh/rdsottwl1cubspy/AADJZIbImlh7gAA21inL_fEza?dl=0'
         }  
-    }else if(coordinator.name === 'Mely'){
+    }else if(coordinator && coordinator?.name === 'Mely'){
         coordinator = {
             ...coordinator,
             dropbox: 'https://www.dropbox.com/t/zZTfnQFXDni5rABt',
             celular: 'https://www.dropbox.com/sh/sfe1pb1re9wu3j6/AAA7NJ2Kz5WNApZZ-bykbADGa?dl=0'
         }  
-    }else if(coordinator.name === 'Nahuel Cañete'){
+    }else if(coordinator && coordinator?.name === 'Nahuel Cañete'){
         coordinator = {
             ...coordinator,
             celular: 'https://www.dropbox.com/sh/xyazeuc01cx62b7/AADAuJNYAM6y_0cfTan5zD-aa?dl=0'
@@ -170,7 +170,7 @@ export function UserPhotos({ userInfo }) {
                 Elegí el link que mas te convenga, si elegís PC vas a descargar un archivo .ZIP con todas las fotos de tu viaje de egresados.
                 </div>
             </div>
-            <a className='homeLink' href={`${coordinator.dropbox}`} target='_blank' rel='noreferrer'>
+            <a className='homeLink' href={`${coordinator?.dropbox}`} target='_blank' rel='noreferrer'>
             <Button className='descargarTodo'>
             Descargar PC
             </Button>
@@ -190,7 +190,7 @@ export function UserPhotos({ userInfo }) {
                 </div>
             </div>
             {/* <UserDownloadModal downloadZip={downloadZip}/> */}
-            <a className='homeLink' href={`${coordinator.celular}`} target='_blank' rel='noreferrer'>
+            <a className='homeLink' href={`${coordinator?.celular}`} target='_blank' rel='noreferrer'>
             <Button className='descargarTodo'>
             Descargar CELULAR
             </Button>
