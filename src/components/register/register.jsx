@@ -32,7 +32,7 @@ const BACKEND_URL_PRODUCCION = process.env.REACT_APP_BACKEND_URL_PRODUCCION;
 
 export default function Register() {
 
-
+console.log('la prueba boluda')
   const dispatch = useDispatch();
   const coordinators = useSelector((state) => state.getDataInfo.coordinators);
   const [error, setError] = useState(initialStateError);
