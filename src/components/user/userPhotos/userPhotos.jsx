@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Pagination } from './paginado/paginado.jsx';
 import { PhotosPerPage } from './paginado/photosPerPage.jsx';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { signOut } from '../../../redux/actions/userActions';
 import { Button, Spinner } from 'reactstrap'
 

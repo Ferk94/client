@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signOut } from '../../../redux/actions/userActions';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'
 import { Navbar, Button } from 'reactstrap'
 import './adminNavBar.css';
