@@ -143,7 +143,7 @@ export default function Register() {
     }
     if (name === "CoordinatorId"){
       if (e.target.value === "" || allCoordinatorsName.includes(e.target.value) !== true) {
-        setError({ ...error, [name]: "Campo obligatorio" });
+        setError({ ...error, [name]: "Dato incorrecto" });
       } else {
         setError({ ...error, [name]: "" });
       }
@@ -171,7 +171,6 @@ export default function Register() {
   }
 
   const nameToId= function(e, value, coordinators){
-    console.log(value.toLowerCase(), "Input antes")
     var names = coordinators.map(el => el.name.toLowerCase())
     if(names.includes(value.toLowerCase())){
        var id = coordinators.filter(el => el.name.toLowerCase() === value.toLowerCase())
@@ -296,7 +295,9 @@ export default function Register() {
           : 
           <div></div>
           }
+          <div className="error">
           {error.CoordinatorId}
+          </div>
           </div>
           <div className="error">{error?.phoneNumberString}</div>
         </div>
@@ -336,7 +337,6 @@ export default function Register() {
           
             <div className="errorCheckbox">{error?.checkbox}</div>
           </div>
-          {`${input.CoordinatorId} ${input.name} ${input.email} ${input.phoneNumberString} ${input.password}`} 
           <RegisterModal error={error} input={input} handleSubmit={handleSubmit} status={status} inputCoordinator={inputCoordinator} coordinators={coordinators}/>
       </div>
     </div>
