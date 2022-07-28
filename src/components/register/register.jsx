@@ -32,14 +32,25 @@ const BACKEND_URL_PRODUCCION = process.env.REACT_APP_BACKEND_URL_PRODUCCION;
 
 export default function Register() {
 
-console.log('la prueba boluda')
+
   const dispatch = useDispatch();
+
+
   const coordinators = useSelector((state) => state.getDataInfo.coordinators);
+
+
+  const allCoordinatorsName = coordinators.length > 0 && coordinators.map((el) => el.name)
+
+  
   const [error, setError] = useState(initialStateError);
   const [input, setInput] = useState(initialState);
   const [status, setStatus] = useState(0);
   const [photos, setPhotos] = useState(1)
+  const [inputCoordinator, setInputCoordinator] = useState("");
+  const [suggest, setSuggest] = useState("");
+  const [activeSuggest, setActiveSuggest] = useState(true)
 
+  
 
   useEffect(() => {
     setTimeout(() => {
@@ -70,6 +81,32 @@ console.log('la prueba boluda')
       [e.target.name]: e.target.value,
     });
   };
+
+  const handleAutocompleteChange = function (e) {
+    
+    let searchVal = e.target.value
+    let suggestion = []
+    if(searchVal.length > 0 ){
+        suggestion = allCoordinatorsName.sort().filter((e)=> e.toLowerCase().includes(searchVal.toLowerCase()))
+    }
+    if(suggestion.length > 0){
+
+      setSuggest(suggestion[0].charAt(0).toUpperCase() + suggestion[0].slice(1))
+    }
+    if(suggestion.length < 1){
+      setSuggest("")
+    }
+    setInputCoordinator(searchVal);
+    setActiveSuggest(true)
+  }
+
+  function acceptSuggestion(e){
+    e.preventDefault();
+
+      setInputCoordinator(suggest)
+      setActiveSuggest(false)
+      setError({ ...error, CoordinatorId: "" });
+  }
 
   const validateInput = function (e) {
     let { name } = e.target;
@@ -105,8 +142,8 @@ console.log('la prueba boluda')
       }
     }
     if (name === "CoordinatorId"){
-      if (e.target.value === "") {
-        setError({ ...error, [name]: "Campo obligatorio" });
+      if (e.target.value === "" || allCoordinatorsName.includes(e.target.value) !== true) {
+        setError({ ...error, [name]: "Dato incorrecto" });
       } else {
         setError({ ...error, [name]: "" });
       }
@@ -133,20 +170,36 @@ console.log('la prueba boluda')
   })
   }
 
-  const handleSubmit = function (e) {
+  const nameToId= function(e, value, coordinators){
+    var names = coordinators.map(el => el.name.toLowerCase())
+    if(names.includes(value.toLowerCase())){
+       var id = coordinators.filter(el => el.name.toLowerCase() === value.toLowerCase())
+       setInput({
+        ...input,
+        CoordinatorId: id[0].id
+      })
+    }else{    
+      setInput({
+       ...input
+      })
+    }
+  }
+
+  const handleSubmit = function (e, value, coordinators) {
     e.preventDefault();
-    if((error.name
-      || error.email
-      || error.password
-      || error.checkbox
-      || error.phoneNumberString
-      || error.CoordinatorId)
-      || (input.name.length === 0
-        || input.email.length === 0 
-        || input.password.length === 0
-        || input.checkbox !== "on"
-        || input.phoneNumberString.length === 0
-        || input.CoordinatorId.length === 0)){
+    nameToId(e, value, coordinators)
+    if((error?.name
+      || error?.email
+      || error?.password
+      || error?.checkbox
+      || error?.phoneNumberString
+      || error?.CoordinatorId)
+      || (input?.name?.length === 0
+        || input?.email?.length === 0 
+        || input?.password?.length === 0
+        || input?.checkbox !== "on"
+        || input?.phoneNumberString?.length === 0
+        || input?.CoordinatorId?.length === 0)){
 
           
         }
@@ -201,8 +254,8 @@ console.log('la prueba boluda')
           />
           <input className="inputFont" 
           onChange={(e) => {
-            handleInputChange(e);
             validateInput(e);
+            handleInputChange(e);
             }}
             name='email'
             type="text"
@@ -212,14 +265,15 @@ console.log('la prueba boluda')
           <div className="error">{error?.email}</div>
           <div className="textformRegister">tu coordinador</div>
           <div className="textformRegister">tu número de teléfono</div>
-          <select name='CoordinatorId' onChange={(e) => handleInputChange(e)} className="selectRegister">
-            <option hidden> </option>
-            {
-              coordinators.map(e => {
-                return <option value={e.id}>{e.name}</option>
-              })
-            }
-          </select>
+          <input className="inputFont"
+          onChange={(e) => {
+            handleAutocompleteChange(e);
+            validateInput(e);
+          }}
+          value={inputCoordinator}
+          name='CoordinatorId'
+          type="text"
+          />
           <input className="inputFont" 
           onChange={(e) => {
             handleInputChange(e);
@@ -229,7 +283,22 @@ console.log('la prueba boluda')
           type="text"
           value={input.phoneNumberString}
           />
-          <div className="error">{error?.CoordinatorId}</div>
+          <div>
+
+          {activeSuggest && suggest ?
+          <div
+          className="suggestion"
+          onClick={(e) => acceptSuggestion(e)}
+          >
+          {activeSuggest && suggest}       
+          </div>
+          : 
+          <div></div>
+          }
+          <div className="error">
+          {error.CoordinatorId}
+          </div>
+          </div>
           <div className="error">{error?.phoneNumberString}</div>
         </div>
         <div className="registerPasswordInput">
@@ -268,7 +337,7 @@ console.log('la prueba boluda')
           
             <div className="errorCheckbox">{error?.checkbox}</div>
           </div>
-          <RegisterModal error={error} input={input} handleSubmit={handleSubmit} status={status}/>
+          <RegisterModal error={error} input={input} handleSubmit={handleSubmit} status={status} inputCoordinator={inputCoordinator} coordinators={coordinators}/>
       </div>
     </div>
     <div className="whatsappContainerRegister">

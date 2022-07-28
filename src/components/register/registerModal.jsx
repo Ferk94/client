@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 
 
-export function RegisterModal({error, input, handleSubmit, status}) {
+export function RegisterModal({error, input, handleSubmit, status, inputCoordinator, coordinators}) {
 
 
     const [modalState, setModalState] = useState(false)
@@ -27,25 +27,27 @@ export function RegisterModal({error, input, handleSubmit, status}) {
     
 
     function openModal(e){
-        handleSubmit(e)
-        setModalState(!modalState)
+        handleSubmit(e, inputCoordinator, coordinators)
+        // setModalState(!modalState)
     }
 
     const btnRegister = document.getElementById('btnRegister')
 
-    if(((error?.name
-        || error?.email
-        || error?.password
-        || error?.phoneNumberString
-        || error?.checkbox
-        || error?.CoordinatorId)
-        || (input?.name.length === 0
-          || input?.email.length === 0 
-          || input?.password.length === 0
-          || input?.phoneNumberString === ""
-          || input?.checkbox !== "on"
-          || input?.CoordinatorId === null
-            ))||(buttonListenerState)){
+    if(
+        // ((error?.name
+        // || error?.email
+        // || error?.password
+        // || error?.phoneNumberString
+        // || error?.checkbox
+        // || error?.CoordinatorId)
+        // || (input?.name.length === 0
+        //   || input?.email.length === 0 
+        //   || input?.password.length === 0
+        //   || input?.phoneNumberString === ""
+        //   || input?.checkbox !== "on"
+        //   || inputCoordinator === ""
+        //     ))||
+            (buttonListenerState)){
                 if(btnRegister != null){
                     btnRegister.disabled = true;
                 }
