@@ -28,6 +28,7 @@ const initialStateError = {
 }
 
 
+
 const BACKEND_URL_PRODUCCION = process.env.REACT_APP_BACKEND_URL_PRODUCCION;
 
 export default function Register() {
@@ -37,7 +38,6 @@ export default function Register() {
 
 
   const coordinators = useSelector((state) => state.getDataInfo.coordinators);
-
 
   const allCoordinatorsName = coordinators.length > 0 && coordinators.map((el) => el.name)
 

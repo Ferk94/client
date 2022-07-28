@@ -28,25 +28,25 @@ export function RegisterModal({error, input, handleSubmit, status, inputCoordina
 
     function openModal(e){
         handleSubmit(e, inputCoordinator, coordinators)
-        // setModalState(!modalState)
+        setModalState(!modalState)
     }
 
     const btnRegister = document.getElementById('btnRegister')
 
     if(
-        // ((error?.name
-        // || error?.email
-        // || error?.password
-        // || error?.phoneNumberString
-        // || error?.checkbox
-        // || error?.CoordinatorId)
-        // || (input?.name.length === 0
-        //   || input?.email.length === 0 
-        //   || input?.password.length === 0
-        //   || input?.phoneNumberString === ""
-        //   || input?.checkbox !== "on"
-        //   || inputCoordinator === ""
-        //     ))||
+        ((error?.name
+        || error?.email
+        || error?.password
+        || error?.phoneNumberString
+        || error?.checkbox
+        || error?.CoordinatorId)
+        || (input?.name.length === 0
+          || input?.email.length === 0 
+          || input?.password.length === 0
+          || input?.phoneNumberString === ""
+          || input?.checkbox !== "on"
+          || inputCoordinator === ""
+            ))||
             (buttonListenerState)){
                 if(btnRegister != null){
                     btnRegister.disabled = true;
