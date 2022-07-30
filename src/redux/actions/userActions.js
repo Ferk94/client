@@ -41,12 +41,13 @@ export function logIn(email, password) {
         try{    
                 const object = {email, password}
                 const response = await axios.post(`${REACT_APP_BACKEND_URL_PRODUCCION}user/login`, object)
-                if(response.data.token){
-                    dispatch({type: LOG_IN, payload: response.data.token})
-                    dispatch({
+                if(response.data){
+                  dispatch({type: LOG_IN, payload: response.data.token})
+                  dispatch({
                     type: GET_USER_INFO,
                     payload: response.data.user
-                })
+                  })
+                  document.token(`token=${response.data.token}; max-age=${6000 * 5}; path=/`)
                 } if(response.data.notAcepted){
                     dispatch({type: 'NOT_ACEPTED', payload: response.data.notAcepted })
                 }

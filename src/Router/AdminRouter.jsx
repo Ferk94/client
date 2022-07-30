@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { AdminNavBar } from '../components/admin/adminNavBar/adminNavBar';
 import { useSelector } from 'react-redux';
 import { UsersGrid } from '../components/admin/usersGrid/usersGrid';
@@ -10,23 +10,34 @@ import { AdminEnterprises } from '../components/admin/adminEnterprises/adminEnte
 import { AdminExcursions } from '../components/admin/adminExcursions/adminExcursions';
 
 function RouteAdmin(props) {
-  const { userInfo } = useSelector(
-    (state) => state.updateUserInfo
+  const { userInfo, token } = useSelector(
+    (state) => state?.updateUserInfo
   );
-
+  
+console.log(token, 'hay token aca?')
   return (
     <>
       {userInfo?.role === 'admin'  }
       <AdminNavBar />
       <Switch>
         <Route exact path='/admin'>
-          <UsersGrid adminInfo={userInfo} />
+          {token ?<UsersGrid/> : <Redirect to='login'/>}
         </Route>
-        <Route exact path='/admin/photos' component={AdminPhotos} />
-        <Route exact path='/admin/photosView' component={AdminPhotosView}/>
-        <Route exact path='/admin/coordinators' component={AdminCoordinators} />
-        <Route exact path='/admin/enterprises' component={AdminEnterprises} />
-        <Route exact path='/admin/excursions' component={AdminExcursions} />
+        <Route exact path='/admin/photos'>
+          {token ? <AdminPhotos/> : <Redirect to='/login'/>}
+        </Route>
+        <Route exact path='/admin/photosView'>
+          {token ? <AdminPhotosView/> : <Redirect to='/login'/>}
+        </Route>
+        <Route exact path='/admin/coordinators'>
+          {token ? <AdminCoordinators/> : <Redirect to='/login'/>}
+        </Route>
+        <Route exact path='/admin/enterprises'>
+          {token ? <AdminEnterprises/> : <Redirect to='/login'/>}
+        </Route>
+        <Route exact path='/admin/excursions'>
+          {token ? <AdminExcursions/> : <Redirect to='/login'/>}
+        </Route>
       </Switch>
     </>
   );
