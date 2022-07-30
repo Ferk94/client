@@ -11,7 +11,7 @@ export const AuthUser = (props) => {
   );
 
 
-  
+  console.log(userInfo, 'q hay en userInfo en auth')
 
 
 

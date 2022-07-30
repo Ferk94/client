@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { getUsers } from "../../../redux/actions/userActions";
 import {UserModal} from './userModal/userModal.jsx';
 import { AceptedModal } from './userModal/aceptedModal.jsx';
@@ -8,11 +9,9 @@ import { Table} from 'reactstrap'
 import { SearchBar } from "./searchBar/searchBar";
 
 
-export function UsersGrid({ adminInfo }) {
+export function UsersGrid({ adminInfo, token }) {
     const dispatch = useDispatch();
     const users = useSelector(state => state?.getDataInfo?.users);
-
-  
 
 
     useEffect(() => {
@@ -20,6 +19,7 @@ export function UsersGrid({ adminInfo }) {
 
     }, [dispatch])
 
+   
 
     // function selectOrder(e) {
     //     e.preventDefault();

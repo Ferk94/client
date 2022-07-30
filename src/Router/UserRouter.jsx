@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { UserPhotos } from '../components/user/userPhotos/userPhotos';
 
@@ -7,7 +7,9 @@ import { UserPhotos } from '../components/user/userPhotos/userPhotos';
 function RouteUser() {
 
   
-  const userInfo = useSelector((state) => state.updateUserInfo.userInfo)
+  const {userInfo, token} = useSelector(
+    (state) => state?.updateUserInfo
+    );
 
   return (
     <>
@@ -15,7 +17,7 @@ function RouteUser() {
 
       <Switch>
         <Route exact path="/user">
-          <UserPhotos userInfo={userInfo} />
+          { token ? <UserPhotos userInfo={userInfo}/> : <Redirect to='/login'/>}
         </Route>
       </Switch>
     </>

@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 
 
-export function RegisterModal({error, input, handleSubmit, status}) {
+export function RegisterModal({error, input, handleSubmit, status, inputCoordinator, coordinators}) {
 
 
     const [modalState, setModalState] = useState(false)
@@ -27,13 +27,14 @@ export function RegisterModal({error, input, handleSubmit, status}) {
     
 
     function openModal(e){
-        handleSubmit(e)
+        handleSubmit(e, inputCoordinator, coordinators)
         setModalState(!modalState)
     }
 
     const btnRegister = document.getElementById('btnRegister')
 
-    if(((error?.name
+    if(
+        ((error?.name
         || error?.email
         || error?.password
         || error?.phoneNumberString
@@ -44,8 +45,9 @@ export function RegisterModal({error, input, handleSubmit, status}) {
           || input?.password.length === 0
           || input?.phoneNumberString === ""
           || input?.checkbox !== "on"
-          || input?.CoordinatorId === null
-            ))||(buttonListenerState)){
+          || inputCoordinator === ""
+            ))||
+            (buttonListenerState)){
                 if(btnRegister != null){
                     btnRegister.disabled = true;
                 }
