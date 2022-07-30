@@ -9,7 +9,6 @@ export function CoordinatorsModal({ value }) {
 
   const [modalState, setModalState] = useState(false);
 
-console.log(value, 'q hay en value en coordinatorsModal?')
   function deleteClick(e, id) {
     e.preventDefault();
 

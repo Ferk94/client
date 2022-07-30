@@ -22,7 +22,6 @@ export function AdminPhotos() {
     const coordinators = useSelector(state => state.getDataInfo.coordinatorsByEnterprise)
     const excursions = useSelector(state => state.getDataInfo.excursions)
 
-console.log(loading, 'el loading')
 
 function onLoad (loading){
     setLoading(!loading)

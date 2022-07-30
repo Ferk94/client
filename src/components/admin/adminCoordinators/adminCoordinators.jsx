@@ -52,7 +52,6 @@ export function AdminCoordinators() {
 
   function handleSubmit(e, id) {
     e.preventDefault();
-    console.log(coordinator, 'q hay en el objeto coordinator?')
     dispatch(postCoordinator(EnterpriseId, coordinator));
     setEnterpriseId(null);
     setCoordinator(initialState);

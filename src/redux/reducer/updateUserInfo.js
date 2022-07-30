@@ -38,7 +38,6 @@ const initialState = {
       case USER_UPDATE_FAIL:
         return { ...state, loading: false, error: action.payload };
       case GET_USER_INFO:
-        console.log(action.payload, 'llega la userInfo al reducer?')
         return { ...state, loading: false, userInfo: action.payload };
       case 'INFO_VALID':
         return { ...state, loading: false, infoValid: action.payload };

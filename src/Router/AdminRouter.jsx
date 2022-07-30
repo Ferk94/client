@@ -14,7 +14,6 @@ function RouteAdmin(props) {
     (state) => state?.updateUserInfo
   );
   
-console.log(token, 'hay token aca?')
   return (
     <>
       {userInfo?.role === 'admin'  }
