@@ -78,7 +78,6 @@ export function AdminEnterprises() {
             <tbody>
                     {
                     enterprises.map(e => {
-			console.log(enterprises, 'cada empresa')
                         return <tr className={`invidivualGridCoordinators${e.id%2}`} key={e.id}>
                             <td >{e.name}</td>
                             <td></td>
