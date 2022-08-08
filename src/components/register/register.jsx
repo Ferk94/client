@@ -104,6 +104,12 @@ export default function Register() {
     e.preventDefault();
 
       setInputCoordinator(suggest)
+      const coordinator = coordinators?.find(c => c?.name?.toLowerCase() === suggest.toLowerCase())
+      const coorId = coordinator?.id
+      setInput({
+        ...input,
+        CoordinatorId: coorId
+      })
       setActiveSuggest(false)
       setError({ ...error, CoordinatorId: "" });
   }

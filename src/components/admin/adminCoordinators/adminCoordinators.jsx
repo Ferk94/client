@@ -12,7 +12,7 @@ import { CoordinatorsModal } from "./coordinatorsModal/coordinatorsModal.jsx";
 import Swal from 'sweetalert2'
 
 export function AdminCoordinators() {
-  const initialState = { name: "", dropbox: ""};
+  const initialState = { name: "", dropboxCel: "", dropboxPc: ""};
 
   const [coordinator, setCoordinator] = useState(initialState);
   const [EnterpriseId, setEnterpriseId] = useState(null);
@@ -38,6 +38,8 @@ export function AdminCoordinators() {
     return {
       id: e?.id,
       name: e?.name,
+      dropboxCel: e?.dropboxCel,
+      dropboxPc: e?.dropboxPc,
       enterprise: enterpriseName(e?.EnterpriseId),
     };
   });
@@ -105,9 +107,22 @@ export function AdminCoordinators() {
             }}
             className="inputSelectSearch"
             type="text"
-            name="dropbox"
-            id="dropbox"
-            placeholder="link de dropbox"
+            name="dropboxCel"
+            id="dropboxCel"
+            placeholder="link de dropbox para celular"
+            onChange={(e) => handleChange(e)}
+          ></Input>
+          <Input
+            style={{
+              boxShadow: "-3px 4px 5px 0px #989898b2",
+              fontFamily: "Fredoka",
+              fontSize: "12px",
+            }}
+            className="inputSelectSearch"
+            type="text"
+            name="dropboxPc"
+            id="dropboxPc"
+            placeholder="link de dropbox para Pc"
             onChange={(e) => handleChange(e)}
           ></Input>
           <Input
@@ -185,9 +200,22 @@ export function AdminCoordinators() {
             }}
             className="inputSelectSearch"
             type="text"
-            name="dropbox"
-            id="dropbox"
-            placeholder="link de dropbox"
+            name="dropboxCel"
+            id="dropboxCel"
+            placeholder="link de dropbox para celular"
+            onChange={(e) => handleChange(e)}
+          ></Input>
+          <Input
+            style={{
+              boxShadow: "-3px 4px 5px 0px #989898b2",
+              fontFamily: "Fredoka",
+              fontSize: "12px",
+            }}
+            className="inputSelectSearch"
+            type="text"
+            name="dropboxPc"
+            id="dropboxPc"
+            placeholder="link de dropbox para Pc"
             onChange={(e) => handleChange(e)}
           ></Input>
           <Input
@@ -280,9 +308,22 @@ export function AdminCoordinators() {
             }}
             className="inputSelectSearch"
             type="text"
-            name="dropbox"
-            id="dropbox"
-            placeholder="link de dropbox"
+            name="dropboxCel"
+            id="dropboxCel"
+            placeholder="link de dropbox para celular"
+            onChange={(e) => handleChange(e)}
+          ></Input>
+          <Input
+            style={{
+              boxShadow: "-3px 4px 5px 0px #989898b2",
+              fontFamily: "Fredoka",
+              fontSize: "12px",
+            }}
+            className="inputSelectSearch"
+            type="text"
+            name="dropboxPc"
+            id="dropboxPc"
+            placeholder="link de dropbox para Pc"
             onChange={(e) => handleChange(e)}
           ></Input>
           <Input
