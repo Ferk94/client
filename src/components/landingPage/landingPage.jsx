@@ -35,7 +35,7 @@ export default function LandingPage(){
         </Link>
         </div>
         <div className="whatsappContainerLanding">
-            <a href="https://wa.me/message/UW5MARGNVV24M1" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/message/W6PH7DKBWGHQA1" target="_blank" rel="noreferrer">
             <img className="whatsappLanding" src="./images/WhatsappIcon.png" alt=""/>
             </a>
         </div>
