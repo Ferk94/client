@@ -34,7 +34,7 @@ export function UserPhotos({ userInfo }) {
 
     var coordinator = coordinators?.find(e => userInfo?.coordinatorId === e.id)
     
-
+   console.log(coordinator, 'tengo al coordinador con los links?')
 
     
 
