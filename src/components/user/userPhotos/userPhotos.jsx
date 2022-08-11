@@ -1,4 +1,5 @@
 import './userPhotos.css'
+import axios from 'axios';
 import { saveAs } from 'file-saver';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,6 +16,8 @@ import { getExcursionsByCoordinatorId } from '../../../redux/actions/excursionsA
 import { UserDownloadModal } from './userDownloadModal';
 const zip = require('jszip')();
 
+const {REACT_APP_BACKEND_URL_PRODUCCION} = process.env;
+
 export function UserPhotos({ userInfo }) {
 
 
@@ -27,14 +30,19 @@ export function UserPhotos({ userInfo }) {
     const [currentPage, setCurrentPage] = useState(1);
     const [loadingContainer, setLoadingContainer] = useState(false)
     //const [ excursionsIdByCoordinator, setExcursionsIdByCoordinator ] = useState([])
-    
+    const [coordinator, setCoordinator] = useState({})
     const dispatch = useDispatch();
 
     
 
-    var coordinator = coordinators?.find(e => userInfo?.coordinatorId === e.id)
+    // var coordinator = coordinators?.find(e => userInfo?.coordinatorId === e.id)
     
-
+    useEffect(() => {
+        axios.get(`${REACT_APP_BACKEND_URL_PRODUCCION}coordinators/${userInfo.coordinatorId}`)
+        .then(({data}) => {
+            setCoordinator(data)
+        })
+    }, [])
 
     
 
