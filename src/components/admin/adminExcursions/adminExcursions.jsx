@@ -113,7 +113,7 @@ export function AdminExcursions() {
         <Form className='searchBar-form' style={{marginTop: "25px", marginBottom: "25px"}}>
             <Input id="name" value={input.name} name="name" placeholder='Ingresar excursion' style={{ boxShadow: "-3px 4px 5px 0px #989898b2",fontFamily: 'Fredoka', fontSize:"12px"}} className='inputSelectSearch' type="text" onChange={e => handleChange(e)}></Input>
             <Input  type='select' name="coordinators" id="coordinators" style={{width: "200px", boxShadow: "-3px 4px 5px 0px #989898b2", fontSize:"12px", fontFamily: 'Fredoka'}} className='inputSelectSearch' onChange={e => addCoordinator(e)}>
-                <option class="mystyle" >Asocie un coordinador</option>
+                <option class="mystyle" hidden>Asocie un coordinador</option>
                 {
                     coordinators?.map(e => {
                         return <option value={e.id} key={e.id}>{e.name}</option>
