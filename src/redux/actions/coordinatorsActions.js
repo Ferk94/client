@@ -39,6 +39,21 @@ export function deleteCoordinator(coordinatorId){
     }
 }
 
+export function editCoordinator(coordinatorId, data){
+    return async function(dispatch){
+        try {
+            await axios.put(`${REACT_APP_BACKEND_URL_PRODUCCION}coordinators/${coordinatorId}`, data)
+            return dispatch({
+                type: 'EDIT_COORDINATOR',
+                payload: {coordinatorId, data}
+            })
+
+        }catch(err){
+            console.error(err)
+        }
+    }
+}
+
 export function postCoordinator(EnterpriseId, data){
     return async function(dispatch){
         try {

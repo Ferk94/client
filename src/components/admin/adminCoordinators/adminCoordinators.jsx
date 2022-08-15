@@ -9,7 +9,8 @@ import { getEnterprises } from "../../../redux/actions/enterprisesActions";
 import { Button, Table, Input, Form } from "reactstrap";
 import "./adminCoordinators.css";
 import { CoordinatorsModal } from "./coordinatorsModal/coordinatorsModal.jsx";
-import Swal from 'sweetalert2'
+import { EditModal } from "./coordinatorsModal/editModal";
+import Swal from 'sweetalert2';
 
 export function AdminCoordinators() {
   const initialState = { name: "", dropboxCel: "", dropboxPc: ""};
@@ -78,6 +79,10 @@ export function AdminCoordinators() {
     dispatch(getCoordinatorsByEnterpriseId(id));
   }
 
+  function editCoordinator(e, coordinator){
+
+  }
+
 
   if(enterprises?.length === 0 && fixedCoordinators.length === 0){
     return (
@@ -139,7 +144,7 @@ export function AdminCoordinators() {
             onChange={(e) => selectEnterprise(e)}
           >
             
-            <option class="mystyle">Asocie una empresa</option>
+            <option class="mystyle" hidden>Asocie una empresa</option>
             {enterprises.map((e) => {
               return (
                 <option class="mystyle" value={e.id} key={e.id}>
@@ -232,7 +237,7 @@ export function AdminCoordinators() {
             onChange={(e) => selectEnterprise(e)}
           >
             
-            <option class="mystyle">Asocie una empresa</option>
+            <option class="mystyle" hidden>Asocie una empresa</option>
             {enterprises.map((e) => {
               return (
                 <option class="mystyle" value={e.id} key={e.id}>
@@ -340,7 +345,7 @@ export function AdminCoordinators() {
             onChange={(e) => selectEnterprise(e)}
           >
             
-            <option class="mystyle">Asocie una empresa</option>
+            <option class="mystyle" hidden>Asocie una empresa</option>
             {enterprises.map((e) => {
               return (
                 <option class="mystyle" value={e.id} key={e.id}>
@@ -390,7 +395,9 @@ export function AdminCoordinators() {
           <thead className="gridTitlesCoordinators">
             <th>Nombre y Apellido</th>
             <th>Empresa</th>
-            <th></th>
+            <th>Link Cel</th>
+            <th>Link Pc</th>
+            <th>Editar</th>
           </thead>
           <tbody>
             {fixedCoordinators?.map((c) => {
@@ -402,8 +409,9 @@ export function AdminCoordinators() {
                   <td>{c.name}</td>
                   <td>{c.enterprise}</td>
                   {/* <td ><Button style={{ borderRadius: "5px", width: "25px", height: "25px", display: 'flex', justifyContent: 'space-around', paddingBottom: '20px', paddingTop: '1px' }} color="danger" onClick={e => handleClose(e, c.id)} >X</Button></td> */}
-                  <td></td>
-                  <td></td>
+                  <td><a className='homeLink' href={c.dropboxCel} target='_blank' rel='noreferrer'>link Cel</a></td>
+                  <td><a className='homeLink' href={c.dropboxPc}  target='_blank' rel='noreferrer'>link Pc</a></td>
+                  <td><EditModal value={c}></EditModal></td>
                   <td style={{ userSelect: "none" }}>
                                                                                                          
                   </td>
@@ -423,6 +431,7 @@ export function AdminCoordinators() {
   
           <thead className="gridTitlesFooter">
             <th>  </th>
+            <th></th>
             <th></th>
             <th></th>
             <th></th>
